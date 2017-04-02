@@ -1,0 +1,3218 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://momentjs.com/timezone/"
+
+    >moment-timezone (v0.5.11)</a>
+</h1>
+<h4>Parse and display moments in any timezone.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.moment-timezone">module moment-timezone</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">moment-timezone.</span>suppressDeprecationWarnings</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.ISO_8601">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>ISO_8601
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.RFC_2822">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>RFC_2822
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.calendarFormat">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>calendarFormat
+            <span class="apidocSignatureSpan">(myMoment, now)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.createFromInputFallback">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>createFromInputFallback
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.defineLocale">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>defineLocale
+            <span class="apidocSignatureSpan">(name, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>duration
+            <span class="apidocSignatureSpan">(input, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.invalid">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>invalid
+            <span class="apidocSignatureSpan">(flags)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.isDate">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>isDate
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.isDuration">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>isDuration
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.isMoment">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>isMoment
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.lang">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>lang
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.langData">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>langData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.locale">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>locale
+            <span class="apidocSignatureSpan">(key, values)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.localeData">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>localeData
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.locales">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>locales
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.max">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>max
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.min">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>min
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.months">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>months
+            <span class="apidocSignatureSpan">(format, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.monthsShort">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>monthsShort
+            <span class="apidocSignatureSpan">(format, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.normalizeUnits">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>normalizeUnits
+            <span class="apidocSignatureSpan">(units)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.now">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>now
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.parseTwoDigitYear">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>parseTwoDigitYear
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.parseZone">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>parseZone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.relativeTimeRounding">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>relativeTimeRounding
+            <span class="apidocSignatureSpan">(roundingFunction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.relativeTimeThreshold">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>relativeTimeThreshold
+            <span class="apidocSignatureSpan">(threshold, limit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>tz
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>tz.Zone
+            <span class="apidocSignatureSpan">(packedString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.unix">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>unix
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.updateLocale">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>updateLocale
+            <span class="apidocSignatureSpan">(name, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.updateOffset">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>updateOffset
+            <span class="apidocSignatureSpan">(mom, keepTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.utc">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>utc
+            <span class="apidocSignatureSpan">(input, format, locale, strict)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.weekdays">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>weekdays
+            <span class="apidocSignatureSpan">(localeSorted, format, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.weekdaysMin">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>weekdaysMin
+            <span class="apidocSignatureSpan">(localeSorted, format, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.weekdaysShort">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>weekdaysShort
+            <span class="apidocSignatureSpan">(localeSorted, format, index)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.</span>defaultZone</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.</span>deprecationHandler</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.</span>duration.fn</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.</span>fn</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.</span>momentProperties</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.</span>tz.Zone.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">moment-timezone.</span>defaultFormat</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">moment-timezone.</span>defaultFormatUtc</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">moment-timezone.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.moment-timezone.duration">module moment-timezone.duration</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.duration">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>duration
+            <span class="apidocSignatureSpan">(input, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.invalid">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.</span>invalid
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.duration.</span>fn</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.moment-timezone.duration.fn">module moment-timezone.duration.fn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn._bubble">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>_bubble
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.abs">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>abs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.add">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>add
+            <span class="apidocSignatureSpan">(input, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.as">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>as
+            <span class="apidocSignatureSpan">(units)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asDays">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asDays
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asHours">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asHours
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asMilliseconds">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asMilliseconds
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asMinutes">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asMinutes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asMonths">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asMonths
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asSeconds">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asSeconds
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asWeeks">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asWeeks
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.asYears">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asYears
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.days">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>days
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.get">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>get
+            <span class="apidocSignatureSpan">(units)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.hours">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>hours
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.humanize">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>humanize
+            <span class="apidocSignatureSpan">(withSuffix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.isValid">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>isValid
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.lang">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>lang
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.locale">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>locale
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.localeData">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>localeData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.milliseconds">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>milliseconds
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.minutes">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>minutes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.months">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>months
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.seconds">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>seconds
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.subtract">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>subtract
+            <span class="apidocSignatureSpan">(input, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.toISOString">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toISOString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.toIsoString">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toIsoString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.toJSON">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.toString">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.valueOf">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>valueOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.weeks">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>weeks
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.duration.fn.years">
+            function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>years
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.moment-timezone.tz">module moment-timezone.tz</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">moment-timezone.tz.</span>moveAmbiguousForward</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">moment-timezone.tz.</span>moveInvalidForward</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.tz">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>tz
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>Zone
+            <span class="apidocSignatureSpan">(packedString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.add">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>add
+            <span class="apidocSignatureSpan">(packed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.guess">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>guess
+            <span class="apidocSignatureSpan">(ignoreCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.link">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>link
+            <span class="apidocSignatureSpan">(aliases)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.load">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>load
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.names">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>names
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.needsOffset">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>needsOffset
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.setDefault">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>setDefault
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.unpack">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>unpack
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.unpackBase60">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>unpackBase60
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.zone">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>zone
+            <span class="apidocSignatureSpan">(name, caller)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.zoneExists">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>zoneExists
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.tz.</span>_links</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.tz.</span>_names</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">moment-timezone.tz.</span>_zones</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">moment-timezone.tz.</span>dataVersion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">moment-timezone.tz.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.moment-timezone.tz.Zone">module moment-timezone.tz.Zone</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone.Zone">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.</span>Zone
+            <span class="apidocSignatureSpan">(packedString)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.moment-timezone.tz.Zone.prototype">module moment-timezone.tz.Zone.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone.prototype._index">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>_index
+            <span class="apidocSignatureSpan">(timestamp)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone.prototype._set">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>_set
+            <span class="apidocSignatureSpan">(unpacked)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone.prototype.abbr">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>abbr
+            <span class="apidocSignatureSpan">(mom)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone.prototype.offset">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>offset
+            <span class="apidocSignatureSpan">(mom)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.tz.Zone.prototype.parse">
+            function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>parse
+            <span class="apidocSignatureSpan">(timestamp)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.moment-timezone" id="apidoc.module.moment-timezone">module moment-timezone</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.ISO_8601" id="apidoc.element.moment-timezone.ISO_8601">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>ISO_8601
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ISO_8601 = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.RFC_2822" id="apidoc.element.moment-timezone.RFC_2822">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>RFC_2822
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RFC_2822 = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.calendarFormat" id="apidoc.element.moment-timezone.calendarFormat">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>calendarFormat
+        <span class="apidocSignatureSpan">(myMoment, now)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getCalendarFormat(myMoment, now) {
+    var diff = myMoment.diff(now, &#x27;days&#x27;, true);
+    return diff &#x3c; -6 ? &#x27;sameElse&#x27; :
+            diff &#x3c; -1 ? &#x27;lastWeek&#x27; :
+            diff &#x3c; 0 ? &#x27;lastDay&#x27; :
+            diff &#x3c; 1 ? &#x27;sameDay&#x27; :
+            diff &#x3c; 2 ? &#x27;nextDay&#x27; :
+            diff &#x3c; 7 ? &#x27;nextWeek&#x27; : &#x27;sameElse&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.createFromInputFallback" id="apidoc.element.moment-timezone.createFromInputFallback">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>createFromInputFallback
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createFromInputFallback = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i &#x3c; arguments.length; i++) {
+            arg = &#x27;&#x27;;
+            if (typeof arguments[i] === &#x27;object&#x27;) {
+                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+                for (var key in arguments[0]) {
+                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.defineLocale" id="apidoc.element.moment-timezone.defineLocale">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>defineLocale
+        <span class="apidocSignatureSpan">(name, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defineLocale(name, config) {
+    if (config !== null) {
+        var parentConfig = baseConfig;
+        config.abbr = name;
+        if (locales[name] != null) {
+            deprecateSimple(&#x27;defineLocaleOverride&#x27;,
+                    &#x27;use moment.updateLocale(localeName, config) to change &#x27; +
+                    &#x27;an existing locale. moment.defineLocale(localeName, &#x27; +
+                    &#x27;config) should only be used for creating a new locale &#x27; +
+                    &#x27;See http://momentjs.com/guides/#/warnings/define-locale/ for more info.&#x27;);
+            parentConfig = locales[name]._config;
+        } else if (config.parentLocale != null) {
+            if (locales[config.parentLocale] != null) {
+                parentConfig = locales[config.parentLocale]._config;
+            } else {
+                if (!localeFamilies[config.parentLocale]) {
+                    localeFamilies[config.parentLocale] = [];
+                }
+                localeFamilies[config.parentLocale].push({
+                    name: name,
+                    config: config
+                });
+                return null;
+            }
+        }
+        locales[name] = new Locale(mergeConfigs(parentConfig, config));
+
+        if (localeFamilies[name]) {
+            localeFamilies[name].forEach(function (x) {
+                defineLocale(x.name, x.config);
+            });
+        }
+
+        // backwards compat for now: also set the locale
+        // make sure we set the locale AFTER all child locales have been
+        // created, so we won&#x27;t end up with the child locale set.
+        getSetGlobalLocale(name);
+
+
+        return locales[name];
+    } else {
+        // useful for testing
+        delete locales[name];
+        return null;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration" id="apidoc.element.moment-timezone.duration">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>duration
+        <span class="apidocSignatureSpan">(input, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createDuration(input, key) {
+    var duration = input,
+        // matching against regexp is expensive, do it on demand
+        match = null,
+        sign,
+        ret,
+        diffRes;
+
+    if (isDuration(input)) {
+        duration = {
+            ms : input._milliseconds,
+            d  : input._days,
+            M  : input._months
+        };
+    } else if (isNumber(input)) {
+        duration = {};
+        if (key) {
+            duration[key] = input;
+        } else {
+            duration.milliseconds = input;
+        }
+    } else if (!!(match = aspNetRegex.exec(input))) {
+        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        duration = {
+            y  : 0,
+            d  : toInt(match[DATE])                         * sign,
+            h  : toInt(match[HOUR])                         * sign,
+            m  : toInt(match[MINUTE])                       * sign,
+            s  : toInt(match[SECOND])                       * sign,
+            ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
+        };
+    } else if (!!(match = isoRegex.exec(input))) {
+        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        duration = {
+            y : parseIso(match[2], sign),
+            M : parseIso(match[3], sign),
+            w : parseIso(match[4], sign),
+            d : parseIso(match[5], sign),
+            h : parseIso(match[6], sign),
+            m : parseIso(match[7], sign),
+            s : parseIso(match[8], sign)
+        };
+    } else if (duration == null) {// checks for null or undefined
+        duration = {};
+    } else if (typeof duration === &#x27;object&#x27; &#x26;&#x26; (&#x27;from&#x27; in duration || &#x27;to&#x27; in duration)) {
+        diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
+
+        duration = {};
+        duration.ms = diffRes.milliseconds;
+        duration.M = diffRes.months;
+    }
+
+    ret = new Duration(duration);
+
+    if (isDuration(input) &#x26;&#x26; hasOwnProp(input, &#x27;_locale&#x27;)) {
+        ret._locale = input._locale;
+    }
+
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.invalid" id="apidoc.element.moment-timezone.invalid">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>invalid
+        <span class="apidocSignatureSpan">(flags)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createInvalid(flags) {
+    var m = createUTC(NaN);
+    if (flags != null) {
+        extend(getParsingFlags(m), flags);
+    }
+    else {
+        getParsingFlags(m).userInvalidated = true;
+    }
+
+    return m;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.isDate" id="apidoc.element.moment-timezone.isDate">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>isDate
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isDate(input) {
+    return input instanceof Date || Object.prototype.toString.call(input) === &#x27;[object Date]&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.isDuration" id="apidoc.element.moment-timezone.isDuration">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>isDuration
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isDuration(obj) {
+    return obj instanceof Duration;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.isMoment" id="apidoc.element.moment-timezone.isMoment">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>isMoment
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isMoment(obj) {
+    return obj instanceof Moment || (obj != null &#x26;&#x26; obj._isAMomentObject != null);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.lang" id="apidoc.element.moment-timezone.lang">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>lang
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lang = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i &#x3c; arguments.length; i++) {
+            arg = &#x27;&#x27;;
+            if (typeof arguments[i] === &#x27;object&#x27;) {
+                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+                for (var key in arguments[0]) {
+                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.langData" id="apidoc.element.moment-timezone.langData">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>langData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">langData = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i &#x3c; arguments.length; i++) {
+            arg = &#x27;&#x27;;
+            if (typeof arguments[i] === &#x27;object&#x27;) {
+                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+                for (var key in arguments[0]) {
+                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.locale" id="apidoc.element.moment-timezone.locale">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>locale
+        <span class="apidocSignatureSpan">(key, values)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getSetGlobalLocale(key, values) {
+    var data;
+    if (key) {
+        if (isUndefined(values)) {
+            data = getLocale(key);
+        }
+        else {
+            data = defineLocale(key, values);
+        }
+
+        if (data) {
+            // moment.duration._locale = moment._locale = data;
+            globalLocale = data;
+        }
+    }
+
+    return globalLocale._abbr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.localeData" id="apidoc.element.moment-timezone.localeData">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>localeData
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getLocale(key) {
+    var locale;
+
+    if (key &#x26;&#x26; key._locale &#x26;&#x26; key._locale._abbr) {
+        key = key._locale._abbr;
+    }
+
+    if (!key) {
+        return globalLocale;
+    }
+
+    if (!isArray(key)) {
+        //short-circuit everything else
+        locale = loadLocale(key);
+        if (locale) {
+            return locale;
+        }
+        key = [key];
+    }
+
+    return chooseLocale(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.locales" id="apidoc.element.moment-timezone.locales">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>locales
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listLocales() {
+    return keys$1(locales);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.max" id="apidoc.element.moment-timezone.max">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>max
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function max() {
+    var args = [].slice.call(arguments, 0);
+
+    return pickBy(&#x27;isAfter&#x27;, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.min" id="apidoc.element.moment-timezone.min">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>min
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function min() {
+    var args = [].slice.call(arguments, 0);
+
+    return pickBy(&#x27;isBefore&#x27;, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.months" id="apidoc.element.moment-timezone.months">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>months
+        <span class="apidocSignatureSpan">(format, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listMonths(format, index) {
+    return listMonthsImpl(format, index, &#x27;months&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.monthsShort" id="apidoc.element.moment-timezone.monthsShort">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>monthsShort
+        <span class="apidocSignatureSpan">(format, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listMonthsShort(format, index) {
+    return listMonthsImpl(format, index, &#x27;monthsShort&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.normalizeUnits" id="apidoc.element.moment-timezone.normalizeUnits">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>normalizeUnits
+        <span class="apidocSignatureSpan">(units)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalizeUnits(units) {
+    return typeof units === &#x27;string&#x27; ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.now" id="apidoc.element.moment-timezone.now">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>now
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">now = function () {
+    return Date.now ? Date.now() : +(new Date());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.parseTwoDigitYear" id="apidoc.element.moment-timezone.parseTwoDigitYear">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>parseTwoDigitYear
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseTwoDigitYear = function (input) {
+    return toInt(input) + (toInt(input) &#x3e; 68 ? 1900 : 2000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.parseZone" id="apidoc.element.moment-timezone.parseZone">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>parseZone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createInZone() {
+    return createLocal.apply(null, arguments).parseZone();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.relativeTimeRounding" id="apidoc.element.moment-timezone.relativeTimeRounding">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>relativeTimeRounding
+        <span class="apidocSignatureSpan">(roundingFunction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getSetRelativeTimeRounding(roundingFunction) {
+    if (roundingFunction === undefined) {
+        return round;
+    }
+    if (typeof(roundingFunction) === &#x27;function&#x27;) {
+        round = roundingFunction;
+        return true;
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.relativeTimeThreshold" id="apidoc.element.moment-timezone.relativeTimeThreshold">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>relativeTimeThreshold
+        <span class="apidocSignatureSpan">(threshold, limit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getSetRelativeTimeThreshold(threshold, limit) {
+    if (thresholds[threshold] === undefined) {
+        return false;
+    }
+    if (limit === undefined) {
+        return thresholds[threshold];
+    }
+    thresholds[threshold] = limit;
+    if (threshold === &#x27;s&#x27;) {
+        thresholds.ss = limit - 1;
+    }
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz" id="apidoc.element.moment-timezone.tz">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>tz
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tz(input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
+-url] [![Build Status][travis-image]][travis-url]
+
+IANA Time Zone Database + [Moment.js](http://momentjs.com).
+
+```js
+var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
+june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
+june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
+june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
+june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+
+var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
+dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
+dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone" id="apidoc.element.moment-timezone.tz.Zone">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>tz.Zone
+        <span class="apidocSignatureSpan">(packedString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Zone(packedString) {
+		if (packedString) {
+			this._set(unpack(packedString));
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.unix" id="apidoc.element.moment-timezone.unix">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>unix
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createUnix(input) {
+    return createLocal(input * 1000);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.updateLocale" id="apidoc.element.moment-timezone.updateLocale">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>updateLocale
+        <span class="apidocSignatureSpan">(name, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function updateLocale(name, config) {
+    if (config != null) {
+        var locale, parentConfig = baseConfig;
+        // MERGE
+        if (locales[name] != null) {
+            parentConfig = locales[name]._config;
+        }
+        config = mergeConfigs(parentConfig, config);
+        locale = new Locale(config);
+        locale.parentLocale = locales[name];
+        locales[name] = locale;
+
+        // backwards compat for now: also set the locale
+        getSetGlobalLocale(name);
+    } else {
+        // pass null for config to unupdate, useful for tests
+        if (locales[name] != null) {
+            if (locales[name].parentLocale != null) {
+                locales[name] = locales[name].parentLocale;
+            } else if (locales[name] != null) {
+                delete locales[name];
+            }
+        }
+    }
+    return locales[name];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.updateOffset" id="apidoc.element.moment-timezone.updateOffset">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>updateOffset
+        <span class="apidocSignatureSpan">(mom, keepTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateOffset = function (mom, keepTime) {
+		var zone = moment.defaultZone,
+			offset;
+
+		if (mom._z === undefined) {
+			if (zone &#x26;&#x26; needsOffset(mom) &#x26;&#x26; !mom._isUTC) {
+				mom._d = moment.utc(mom._a)._d;
+				mom.utc().add(zone.parse(mom), &#x27;minutes&#x27;);
+			}
+			mom._z = zone;
+		}
+		if (mom._z) {
+			offset = mom._z.offset(mom);
+			if (Math.abs(offset) &#x3c; 16) {
+				offset = offset / 60;
+			}
+			if (mom.utcOffset !== undefined) {
+				mom.utcOffset(-offset, keepTime);
+			} else {
+				mom.zone(offset, keepTime);
+			}
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.utc" id="apidoc.element.moment-timezone.utc">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>utc
+        <span class="apidocSignatureSpan">(input, format, locale, strict)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createUTC(input, format, locale, strict) {
+    return createLocalOrUTC(input, format, locale, strict, true).utc();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.weekdays" id="apidoc.element.moment-timezone.weekdays">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>weekdays
+        <span class="apidocSignatureSpan">(localeSorted, format, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listWeekdays(localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdays&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.weekdaysMin" id="apidoc.element.moment-timezone.weekdaysMin">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>weekdaysMin
+        <span class="apidocSignatureSpan">(localeSorted, format, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listWeekdaysMin(localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdaysMin&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.weekdaysShort" id="apidoc.element.moment-timezone.weekdaysShort">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>weekdaysShort
+        <span class="apidocSignatureSpan">(localeSorted, format, index)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listWeekdaysShort(localeSorted, format, index) {
+    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdaysShort&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.moment-timezone.duration" id="apidoc.module.moment-timezone.duration">module moment-timezone.duration</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.duration" id="apidoc.element.moment-timezone.duration.duration">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>duration
+        <span class="apidocSignatureSpan">(input, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createDuration(input, key) {
+    var duration = input,
+        // matching against regexp is expensive, do it on demand
+        match = null,
+        sign,
+        ret,
+        diffRes;
+
+    if (isDuration(input)) {
+        duration = {
+            ms : input._milliseconds,
+            d  : input._days,
+            M  : input._months
+        };
+    } else if (isNumber(input)) {
+        duration = {};
+        if (key) {
+            duration[key] = input;
+        } else {
+            duration.milliseconds = input;
+        }
+    } else if (!!(match = aspNetRegex.exec(input))) {
+        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        duration = {
+            y  : 0,
+            d  : toInt(match[DATE])                         * sign,
+            h  : toInt(match[HOUR])                         * sign,
+            m  : toInt(match[MINUTE])                       * sign,
+            s  : toInt(match[SECOND])                       * sign,
+            ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
+        };
+    } else if (!!(match = isoRegex.exec(input))) {
+        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        duration = {
+            y : parseIso(match[2], sign),
+            M : parseIso(match[3], sign),
+            w : parseIso(match[4], sign),
+            d : parseIso(match[5], sign),
+            h : parseIso(match[6], sign),
+            m : parseIso(match[7], sign),
+            s : parseIso(match[8], sign)
+        };
+    } else if (duration == null) {// checks for null or undefined
+        duration = {};
+    } else if (typeof duration === &#x27;object&#x27; &#x26;&#x26; (&#x27;from&#x27; in duration || &#x27;to&#x27; in duration)) {
+        diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
+
+        duration = {};
+        duration.ms = diffRes.milliseconds;
+        duration.M = diffRes.months;
+    }
+
+    ret = new Duration(duration);
+
+    if (isDuration(input) &#x26;&#x26; hasOwnProp(input, &#x27;_locale&#x27;)) {
+        ret._locale = input._locale;
+    }
+
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.invalid" id="apidoc.element.moment-timezone.duration.invalid">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.</span>invalid
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createInvalid$1() {
+    return createDuration(NaN);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.moment-timezone.duration.fn" id="apidoc.module.moment-timezone.duration.fn">module moment-timezone.duration.fn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn._bubble" id="apidoc.element.moment-timezone.duration.fn._bubble">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>_bubble
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function bubble() {
+    var milliseconds = this._milliseconds;
+    var days         = this._days;
+    var months       = this._months;
+    var data         = this._data;
+    var seconds, minutes, hours, years, monthsFromDays;
+
+    // if we have a mix of positive and negative values, bubble down first
+    // check: https://github.com/moment/moment/issues/2166
+    if (!((milliseconds &#x3e;= 0 &#x26;&#x26; days &#x3e;= 0 &#x26;&#x26; months &#x3e;= 0) ||
+            (milliseconds &#x3c;= 0 &#x26;&#x26; days &#x3c;= 0 &#x26;&#x26; months &#x3c;= 0))) {
+        milliseconds += absCeil(monthsToDays(months) + days) * 864e5;
+        days = 0;
+        months = 0;
+    }
+
+    // The following code bubbles up values, see the tests for
+    // examples of what that means.
+    data.milliseconds = milliseconds % 1000;
+
+    seconds           = absFloor(milliseconds / 1000);
+    data.seconds      = seconds % 60;
+
+    minutes           = absFloor(seconds / 60);
+    data.minutes      = minutes % 60;
+
+    hours             = absFloor(minutes / 60);
+    data.hours        = hours % 24;
+
+    days += absFloor(hours / 24);
+
+    // convert days to months
+    monthsFromDays = absFloor(daysToMonths(days));
+    months += monthsFromDays;
+    days -= absCeil(monthsToDays(monthsFromDays));
+
+    // 12 months -&#x3e; 1 year
+    years = absFloor(months / 12);
+    months %= 12;
+
+    data.days   = days;
+    data.months = months;
+    data.years  = years;
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.abs" id="apidoc.element.moment-timezone.duration.fn.abs">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>abs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function abs() {
+    var data           = this._data;
+
+    this._milliseconds = mathAbs(this._milliseconds);
+    this._days         = mathAbs(this._days);
+    this._months       = mathAbs(this._months);
+
+    data.milliseconds  = mathAbs(data.milliseconds);
+    data.seconds       = mathAbs(data.seconds);
+    data.minutes       = mathAbs(data.minutes);
+    data.hours         = mathAbs(data.hours);
+    data.months        = mathAbs(data.months);
+    data.years         = mathAbs(data.years);
+
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.add" id="apidoc.element.moment-timezone.duration.fn.add">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>add
+        <span class="apidocSignatureSpan">(input, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function add$1(input, value) {
+    return addSubtract$1(this, input, value, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.as" id="apidoc.element.moment-timezone.duration.fn.as">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>as
+        <span class="apidocSignatureSpan">(units)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function as(units) {
+    if (!this.isValid()) {
+        return NaN;
+    }
+    var days;
+    var months;
+    var milliseconds = this._milliseconds;
+
+    units = normalizeUnits(units);
+
+    if (units === &#x27;month&#x27; || units === &#x27;year&#x27;) {
+        days   = this._days   + milliseconds / 864e5;
+        months = this._months + daysToMonths(days);
+        return units === &#x27;month&#x27; ? months : months / 12;
+    } else {
+        // handle milliseconds separately because of floating point math errors (issue #1867)
+        days = this._days + Math.round(monthsToDays(this._months));
+        switch (units) {
+            case &#x27;week&#x27;   : return days / 7     + milliseconds / 6048e5;
+            case &#x27;day&#x27;    : return days         + milliseconds / 864e5;
+            case &#x27;hour&#x27;   : return days * 24    + milliseconds / 36e5;
+            case &#x27;minute&#x27; : return days * 1440  + milliseconds / 6e4;
+            case &#x27;second&#x27; : return days * 86400 + milliseconds / 1000;
+            // Math.floor prevents floating point math errors here
+            case &#x27;millisecond&#x27;: return Math.floor(days * 864e5) + milliseconds;
+            default: throw new Error(&#x27;Unknown unit &#x27; + units);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asDays" id="apidoc.element.moment-timezone.duration.fn.asDays">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asDays
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asDays = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asHours" id="apidoc.element.moment-timezone.duration.fn.asHours">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asHours
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asHours = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asMilliseconds" id="apidoc.element.moment-timezone.duration.fn.asMilliseconds">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asMilliseconds
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asMilliseconds = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asMinutes" id="apidoc.element.moment-timezone.duration.fn.asMinutes">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asMinutes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asMinutes = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asMonths" id="apidoc.element.moment-timezone.duration.fn.asMonths">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asMonths
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asMonths = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asSeconds" id="apidoc.element.moment-timezone.duration.fn.asSeconds">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asSeconds
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asSeconds = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asWeeks" id="apidoc.element.moment-timezone.duration.fn.asWeeks">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asWeeks
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asWeeks = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.asYears" id="apidoc.element.moment-timezone.duration.fn.asYears">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>asYears
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">asYears = function () {
+    return this.as(alias);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.days" id="apidoc.element.moment-timezone.duration.fn.days">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>days
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">days = function () {
+    return this.isValid() ? this._data[name] : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.get" id="apidoc.element.moment-timezone.duration.fn.get">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>get
+        <span class="apidocSignatureSpan">(units)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get$2(units) {
+    units = normalizeUnits(units);
+    return this.isValid() ? this[units + &#x27;s&#x27;]() : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.hours" id="apidoc.element.moment-timezone.duration.fn.hours">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>hours
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hours = function () {
+    return this.isValid() ? this._data[name] : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.humanize" id="apidoc.element.moment-timezone.duration.fn.humanize">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>humanize
+        <span class="apidocSignatureSpan">(withSuffix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function humanize(withSuffix) {
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var locale = this.localeData();
+    var output = relativeTime$1(this, !withSuffix, locale);
+
+    if (withSuffix) {
+        output = locale.pastFuture(+this, output);
+    }
+
+    return locale.postformat(output);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.isValid" id="apidoc.element.moment-timezone.duration.fn.isValid">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>isValid
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isValid$1() {
+    return this._isValid;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.lang" id="apidoc.element.moment-timezone.duration.fn.lang">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>lang
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lang = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i &#x3c; arguments.length; i++) {
+            arg = &#x27;&#x27;;
+            if (typeof arguments[i] === &#x27;object&#x27;) {
+                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+                for (var key in arguments[0]) {
+                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.locale" id="apidoc.element.moment-timezone.duration.fn.locale">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>locale
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function locale(key) {
+    var newLocaleData;
+
+    if (key === undefined) {
+        return this._locale._abbr;
+    } else {
+        newLocaleData = getLocale(key);
+        if (newLocaleData != null) {
+            this._locale = newLocaleData;
+        }
+        return this;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.localeData" id="apidoc.element.moment-timezone.duration.fn.localeData">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>localeData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function localeData() {
+    return this._locale;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.milliseconds" id="apidoc.element.moment-timezone.duration.fn.milliseconds">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>milliseconds
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">milliseconds = function () {
+    return this.isValid() ? this._data[name] : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.minutes" id="apidoc.element.moment-timezone.duration.fn.minutes">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>minutes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">minutes = function () {
+    return this.isValid() ? this._data[name] : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.months" id="apidoc.element.moment-timezone.duration.fn.months">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>months
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">months = function () {
+    return this.isValid() ? this._data[name] : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.seconds" id="apidoc.element.moment-timezone.duration.fn.seconds">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>seconds
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">seconds = function () {
+    return this.isValid() ? this._data[name] : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.subtract" id="apidoc.element.moment-timezone.duration.fn.subtract">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>subtract
+        <span class="apidocSignatureSpan">(input, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function subtract$1(input, value) {
+    return addSubtract$1(this, input, value, -1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.toISOString" id="apidoc.element.moment-timezone.duration.fn.toISOString">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toISOString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toISOString$1() {
+    // for ISO strings we do not use the normal bubbling rules:
+    //  * milliseconds bubble up until they become hours
+    //  * days do not bubble at all
+    //  * months bubble up until they become years
+    // This is because there is no context-free conversion between hours and days
+    // (think of clock changes)
+    // and also not between days and months (28-31 days per month)
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var seconds = abs$1(this._milliseconds) / 1000;
+    var days         = abs$1(this._days);
+    var months       = abs$1(this._months);
+    var minutes, hours, years;
+
+    // 3600 seconds -&#x3e; 60 minutes -&#x3e; 1 hour
+    minutes           = absFloor(seconds / 60);
+    hours             = absFloor(minutes / 60);
+    seconds %= 60;
+    minutes %= 60;
+
+    // 12 months -&#x3e; 1 year
+    years  = absFloor(months / 12);
+    months %= 12;
+
+
+    // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+    var Y = years;
+    var M = months;
+    var D = days;
+    var h = hours;
+    var m = minutes;
+    var s = seconds;
+    var total = this.asSeconds();
+
+    if (!total) {
+        // this is the same as C#&#x27;s (Noda) and python (isodate)...
+        // but not other JS (goog.date)
+        return &#x27;P0D&#x27;;
+    }
+
+    return (total &#x3c; 0 ? &#x27;-&#x27; : &#x27;&#x27;) +
+        &#x27;P&#x27; +
+        (Y ? Y + &#x27;Y&#x27; : &#x27;&#x27;) +
+        (M ? M + &#x27;M&#x27; : &#x27;&#x27;) +
+        (D ? D + &#x27;D&#x27; : &#x27;&#x27;) +
+        ((h || m || s) ? &#x27;T&#x27; : &#x27;&#x27;) +
+        (h ? h + &#x27;H&#x27; : &#x27;&#x27;) +
+        (m ? m + &#x27;M&#x27; : &#x27;&#x27;) +
+        (s ? s + &#x27;S&#x27; : &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.toIsoString" id="apidoc.element.moment-timezone.duration.fn.toIsoString">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toIsoString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toIsoString = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i &#x3c; arguments.length; i++) {
+            arg = &#x27;&#x27;;
+            if (typeof arguments[i] === &#x27;object&#x27;) {
+                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+                for (var key in arguments[0]) {
+                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.toJSON" id="apidoc.element.moment-timezone.duration.fn.toJSON">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toISOString$1() {
+    // for ISO strings we do not use the normal bubbling rules:
+    //  * milliseconds bubble up until they become hours
+    //  * days do not bubble at all
+    //  * months bubble up until they become years
+    // This is because there is no context-free conversion between hours and days
+    // (think of clock changes)
+    // and also not between days and months (28-31 days per month)
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var seconds = abs$1(this._milliseconds) / 1000;
+    var days         = abs$1(this._days);
+    var months       = abs$1(this._months);
+    var minutes, hours, years;
+
+    // 3600 seconds -&#x3e; 60 minutes -&#x3e; 1 hour
+    minutes           = absFloor(seconds / 60);
+    hours             = absFloor(minutes / 60);
+    seconds %= 60;
+    minutes %= 60;
+
+    // 12 months -&#x3e; 1 year
+    years  = absFloor(months / 12);
+    months %= 12;
+
+
+    // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+    var Y = years;
+    var M = months;
+    var D = days;
+    var h = hours;
+    var m = minutes;
+    var s = seconds;
+    var total = this.asSeconds();
+
+    if (!total) {
+        // this is the same as C#&#x27;s (Noda) and python (isodate)...
+        // but not other JS (goog.date)
+        return &#x27;P0D&#x27;;
+    }
+
+    return (total &#x3c; 0 ? &#x27;-&#x27; : &#x27;&#x27;) +
+        &#x27;P&#x27; +
+        (Y ? Y + &#x27;Y&#x27; : &#x27;&#x27;) +
+        (M ? M + &#x27;M&#x27; : &#x27;&#x27;) +
+        (D ? D + &#x27;D&#x27; : &#x27;&#x27;) +
+        ((h || m || s) ? &#x27;T&#x27; : &#x27;&#x27;) +
+        (h ? h + &#x27;H&#x27; : &#x27;&#x27;) +
+        (m ? m + &#x27;M&#x27; : &#x27;&#x27;) +
+        (s ? s + &#x27;S&#x27; : &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.toString" id="apidoc.element.moment-timezone.duration.fn.toString">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toISOString$1() {
+    // for ISO strings we do not use the normal bubbling rules:
+    //  * milliseconds bubble up until they become hours
+    //  * days do not bubble at all
+    //  * months bubble up until they become years
+    // This is because there is no context-free conversion between hours and days
+    // (think of clock changes)
+    // and also not between days and months (28-31 days per month)
+    if (!this.isValid()) {
+        return this.localeData().invalidDate();
+    }
+
+    var seconds = abs$1(this._milliseconds) / 1000;
+    var days         = abs$1(this._days);
+    var months       = abs$1(this._months);
+    var minutes, hours, years;
+
+    // 3600 seconds -&#x3e; 60 minutes -&#x3e; 1 hour
+    minutes           = absFloor(seconds / 60);
+    hours             = absFloor(minutes / 60);
+    seconds %= 60;
+    minutes %= 60;
+
+    // 12 months -&#x3e; 1 year
+    years  = absFloor(months / 12);
+    months %= 12;
+
+
+    // inspired by https://github.com/dordille/moment-isoduration/blob/master/moment.isoduration.js
+    var Y = years;
+    var M = months;
+    var D = days;
+    var h = hours;
+    var m = minutes;
+    var s = seconds;
+    var total = this.asSeconds();
+
+    if (!total) {
+        // this is the same as C#&#x27;s (Noda) and python (isodate)...
+        // but not other JS (goog.date)
+        return &#x27;P0D&#x27;;
+    }
+
+    return (total &#x3c; 0 ? &#x27;-&#x27; : &#x27;&#x27;) +
+        &#x27;P&#x27; +
+        (Y ? Y + &#x27;Y&#x27; : &#x27;&#x27;) +
+        (M ? M + &#x27;M&#x27; : &#x27;&#x27;) +
+        (D ? D + &#x27;D&#x27; : &#x27;&#x27;) +
+        ((h || m || s) ? &#x27;T&#x27; : &#x27;&#x27;) +
+        (h ? h + &#x27;H&#x27; : &#x27;&#x27;) +
+        (m ? m + &#x27;M&#x27; : &#x27;&#x27;) +
+        (s ? s + &#x27;S&#x27; : &#x27;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.valueOf" id="apidoc.element.moment-timezone.duration.fn.valueOf">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>valueOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function valueOf$1() {
+    if (!this.isValid()) {
+        return NaN;
+    }
+    return (
+        this._milliseconds +
+        this._days * 864e5 +
+        (this._months % 12) * 2592e6 +
+        toInt(this._months / 12) * 31536e6
+    );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.weeks" id="apidoc.element.moment-timezone.duration.fn.weeks">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>weeks
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function weeks() {
+    return absFloor(this.days() / 7);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.duration.fn.years" id="apidoc.element.moment-timezone.duration.fn.years">
+        function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>years
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">years = function () {
+    return this.isValid() ? this._data[name] : NaN;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.moment-timezone.tz" id="apidoc.module.moment-timezone.tz">module moment-timezone.tz</a></h1>
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.tz" id="apidoc.element.moment-timezone.tz.tz">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>tz
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function tz(input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
+-url] [![Build Status][travis-image]][travis-url]
+
+IANA Time Zone Database + [Moment.js](http://momentjs.com).
+
+```js
+var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
+june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
+june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
+june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
+june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+
+var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
+dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
+dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone" id="apidoc.element.moment-timezone.tz.Zone">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>Zone
+        <span class="apidocSignatureSpan">(packedString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Zone(packedString) {
+		if (packedString) {
+			this._set(unpack(packedString));
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.add" id="apidoc.element.moment-timezone.tz.add">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>add
+        <span class="apidocSignatureSpan">(packed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addZone(packed) {
+		var i, name, split, normalized;
+
+		if (typeof packed === &#x22;string&#x22;) {
+			packed = [packed];
+		}
+
+		for (i = 0; i &#x3c; packed.length; i++) {
+			split = packed[i].split(&#x27;|&#x27;);
+			name = split[0];
+			normalized = normalizeName(name);
+			zones[normalized] = packed[i];
+			names[normalized] = name;
+			if (split[5]) {
+				addToGuesses(normalized, split[2].split(&#x27; &#x27;));
+			}
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.guess" id="apidoc.element.moment-timezone.tz.guess">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>guess
+        <span class="apidocSignatureSpan">(ignoreCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function guess(ignoreCache) {
+		if (!cachedGuess || ignoreCache) {
+			cachedGuess = rebuildGuess();
+		}
+		return cachedGuess;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.link" id="apidoc.element.moment-timezone.tz.link">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>link
+        <span class="apidocSignatureSpan">(aliases)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addLink(aliases) {
+		var i, alias, normal0, normal1;
+
+		if (typeof aliases === &#x22;string&#x22;) {
+			aliases = [aliases];
+		}
+
+		for (i = 0; i &#x3c; aliases.length; i++) {
+			alias = aliases[i].split(&#x27;|&#x27;);
+
+			normal0 = normalizeName(alias[0]);
+			normal1 = normalizeName(alias[1]);
+
+			links[normal0] = normal1;
+			names[normal0] = alias[0];
+
+			links[normal1] = normal0;
+			names[normal1] = alias[1];
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.load" id="apidoc.element.moment-timezone.tz.load">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>load
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loadData(data) {
+		addZone(data.zones);
+		addLink(data.links);
+		tz.dataVersion = data.version;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+
+var moment = module.exports = require(&#x22;./moment-timezone&#x22;);
+moment.tz.<span class="apidocCodeKeywordSpan">load</span>(require(&#x27;./data/packed/latest.json&#x27;));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.names" id="apidoc.element.moment-timezone.tz.names">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>names
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNames() {
+		var i, out = [];
+
+		for (i in names) {
+			if (names.hasOwnProperty(i) &#x26;&#x26; (zones[i] || zones[links[i]]) &#x26;&#x26; names[i]) {
+				out.push(names[i]);
+			}
+		}
+
+		return out.sort();
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.needsOffset" id="apidoc.element.moment-timezone.tz.needsOffset">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>needsOffset
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function needsOffset(m) {
+		return !!(m._a &#x26;&#x26; (m._tzm === undefined));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.setDefault" id="apidoc.element.moment-timezone.tz.setDefault">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>setDefault
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefault = function (name) {
+		if (major &#x3c; 2 || (major === 2 &#x26;&#x26; minor &#x3c; 9)) {
+			logError(&#x27;Moment Timezone setDefault() requires Moment.js &#x3e;= 2.9.0. You are using Moment.js &#x27; + moment.version + &#x27;.&#x27;);
+		}
+		moment.defaultZone = name ? getZone(name) : null;
+		return moment;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.unpack" id="apidoc.element.moment-timezone.tz.unpack">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>unpack
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unpack(string) {
+		var data = string.split(&#x27;|&#x27;),
+			offsets = data[2].split(&#x27; &#x27;),
+			indices = data[3].split(&#x27;&#x27;),
+			untils  = data[4].split(&#x27; &#x27;);
+
+		arrayToInt(offsets);
+		arrayToInt(indices);
+		arrayToInt(untils);
+
+		intToUntil(untils, indices.length);
+
+		return {
+			name       : data[0],
+			abbrs      : mapIndices(data[1].split(&#x27; &#x27;), indices),
+			offsets    : mapIndices(offsets, indices),
+			untils     : untils,
+			population : data[5] | 0
+		};
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.unpackBase60" id="apidoc.element.moment-timezone.tz.unpackBase60">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>unpackBase60
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unpackBase60(string) {
+		var i = 0,
+			parts = string.split(&#x27;.&#x27;),
+			whole = parts[0],
+			fractional = parts[1] || &#x27;&#x27;,
+			multiplier = 1,
+			num,
+			out = 0,
+			sign = 1;
+
+		// handle negative numbers
+		if (string.charCodeAt(0) === 45) {
+			i = 1;
+			sign = -1;
+		}
+
+		// handle digits before the decimal
+		for (i; i &#x3c; whole.length; i++) {
+			num = charCodeToInt(whole.charCodeAt(i));
+			out = 60 * out + num;
+		}
+
+		// handle digits after the decimal
+		for (i = 0; i &#x3c; fractional.length; i++) {
+			multiplier = multiplier / 60;
+			num = charCodeToInt(fractional.charCodeAt(i));
+			out += num * multiplier;
+		}
+
+		return out * sign;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.zone" id="apidoc.element.moment-timezone.tz.zone">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>zone
+        <span class="apidocSignatureSpan">(name, caller)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getZone(name, caller) {
+		name = normalizeName(name);
+
+		var zone = zones[name];
+		var link;
+
+		if (zone instanceof Zone) {
+			return zone;
+		}
+
+		if (typeof zone === &#x27;string&#x27;) {
+			zone = new Zone(zone);
+			zones[name] = zone;
+			return zone;
+		}
+
+		// Pass getZone to prevent recursion more than 1 level deep
+		if (links[name] &#x26;&#x26; caller !== getZone &#x26;&#x26; (link = getZone(links[name], getZone))) {
+			zone = zones[name] = new Zone();
+			zone._set(link);
+			zone.name = names[name];
+			return zone;
+		}
+
+		return null;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.zoneExists" id="apidoc.element.moment-timezone.tz.zoneExists">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>zoneExists
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function zoneExists(name) {
+		if (!zoneExists.didShowError) {
+			zoneExists.didShowError = true;
+				logError(&#x22;moment.tz.zoneExists(&#x27;&#x22; + name + &#x22;&#x27;) has been deprecated in favor of !moment.tz.zone(&#x27;&#x22; + name + &#x22;&#x27;)&#x22;);
+		}
+		return !!getZone(name);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.moment-timezone.tz.Zone" id="apidoc.module.moment-timezone.tz.Zone">module moment-timezone.tz.Zone</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone.Zone" id="apidoc.element.moment-timezone.tz.Zone.Zone">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.</span>Zone
+        <span class="apidocSignatureSpan">(packedString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Zone(packedString) {
+		if (packedString) {
+			this._set(unpack(packedString));
+		}
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.moment-timezone.tz.Zone.prototype" id="apidoc.module.moment-timezone.tz.Zone.prototype">module moment-timezone.tz.Zone.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone.prototype._index" id="apidoc.element.moment-timezone.tz.Zone.prototype._index">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>_index
+        <span class="apidocSignatureSpan">(timestamp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_index = function (timestamp) {
+			var target = +timestamp,
+				untils = this.untils,
+				i;
+
+			for (i = 0; i &#x3c; untils.length; i++) {
+				if (target &#x3c; untils[i]) {
+					return i;
+				}
+			}
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone.prototype._set" id="apidoc.element.moment-timezone.tz.Zone.prototype._set">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>_set
+        <span class="apidocSignatureSpan">(unpacked)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_set = function (unpacked) {
+			this.name       = unpacked.name;
+			this.abbrs      = unpacked.abbrs;
+			this.untils     = unpacked.untils;
+			this.offsets    = unpacked.offsets;
+			this.population = unpacked.population;
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone.prototype.abbr" id="apidoc.element.moment-timezone.tz.Zone.prototype.abbr">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>abbr
+        <span class="apidocSignatureSpan">(mom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">abbr = function (mom) {
+			return this.abbrs[this._index(mom)];
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone.prototype.offset" id="apidoc.element.moment-timezone.tz.Zone.prototype.offset">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>offset
+        <span class="apidocSignatureSpan">(mom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">offset = function (mom) {
+			return this.offsets[this._index(mom)];
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.tz.Zone.prototype.parse" id="apidoc.element.moment-timezone.tz.Zone.prototype.parse">
+        function <span class="apidocSignatureSpan">moment-timezone.tz.Zone.prototype.</span>parse
+        <span class="apidocSignatureSpan">(timestamp)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (timestamp) {
+			var target  = +timestamp,
+				offsets = this.offsets,
+				untils  = this.untils,
+				max     = untils.length - 1,
+				offset, offsetNext, offsetPrev, i;
+
+			for (i = 0; i &#x3c; max; i++) {
+				offset     = offsets[i];
+				offsetNext = offsets[i + 1];
+				offsetPrev = offsets[i ? i - 1 : i];
+
+				if (offset &#x3c; offsetNext &#x26;&#x26; tz.moveAmbiguousForward) {
+					offset = offsetNext;
+				} else if (offset &#x3e; offsetPrev &#x26;&#x26; tz.moveInvalidForward) {
+					offset = offsetPrev;
+				}
+
+				if (target &#x3c; untils[i] - (offset * 60000)) {
+					return offsets[i];
+				}
+			}
+
+			return offsets[max];
+		}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
