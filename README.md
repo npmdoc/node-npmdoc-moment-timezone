@@ -1,11 +1,13 @@
-# api documentation for  [moment-timezone (v0.5.11)](http://momentjs.com/timezone/)  [![npm package](https://img.shields.io/npm/v/npmdoc-moment-timezone.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-moment-timezone) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-moment-timezone.svg)](https://travis-ci.org/npmdoc/node-npmdoc-moment-timezone)
+# api documentation for  [moment-timezone (v0.5.13)](http://momentjs.com/timezone/)  [![npm package](https://img.shields.io/npm/v/npmdoc-moment-timezone.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-moment-timezone) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-moment-timezone.svg)](https://travis-ci.org/npmdoc/node-npmdoc-moment-timezone)
 #### Parse and display moments in any timezone.
 
-[![NPM](https://nodei.co/npm/moment-timezone.png?downloads=true)](https://www.npmjs.com/package/moment-timezone)
+[![NPM](https://nodei.co/npm/moment-timezone.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/moment-timezone)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-moment-timezone/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-moment-timezone_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-moment-timezone/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-moment-timezone/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-moment-timezone/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-moment-timezone/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-moment-timezone/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-moment-timezone/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -16,14 +18,13 @@
 {
     "author": {
         "name": "Tim Wood",
-        "email": "washwithcare@gmail.com",
         "url": "http://timwoodcreates.com/"
     },
     "bugs": {
         "url": "https://github.com/moment/moment-timezone/issues"
     },
     "dependencies": {
-        "moment": ">= 2.6.0"
+        "moment": ">= 2.9.0"
     },
     "description": "Parse and display moments in any timezone.",
     "devDependencies": {
@@ -35,13 +36,13 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "9b76c03d8ef514c7e4249a7bbce649eed39ef29f",
-        "tarball": "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.11.tgz"
+        "shasum": "99ce5c7d827262eb0f1f702044177f60745d7b90",
+        "tarball": "https://registry.npmjs.org/moment-timezone/-/moment-timezone-0.5.13.tgz"
     },
     "engines": {
         "node": "*"
     },
-    "gitHead": "2124976c909dd440bea4499c5fd9c8ca4da95fd8",
+    "gitHead": "2b8da8f103f019949d45dc86fd6763960c8474d8",
     "homepage": "http://momentjs.com/timezone/",
     "jspm": {
         "main": "builds/moment-timezone-with-data",
@@ -67,25 +68,20 @@
     "main": "./index.js",
     "maintainers": [
         {
-            "name": "ichernev",
-            "email": "iskren.chernev@gmail.com"
+            "name": "ichernev"
         },
         {
-            "name": "maggiepint",
-            "email": "maggiepint@gmail.com"
+            "name": "maggiepint"
         },
         {
-            "name": "mj1856",
-            "email": "mj1856@hotmail.com"
+            "name": "mj1856"
         },
         {
-            "name": "timrwood",
-            "email": "washwithcare@gmail.com"
+            "name": "timrwood"
         }
     ],
     "name": "moment-timezone",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/moment/moment-timezone.git"
@@ -93,7 +89,7 @@
     "scripts": {
         "test": "grunt"
     },
-    "version": "0.5.11"
+    "version": "0.5.13"
 }
 ```
 
@@ -103,6 +99,7 @@
 
 #### [module moment-timezone](#apidoc.module.moment-timezone)
 1.  boolean <span class="apidocSignatureSpan">moment-timezone.</span>suppressDeprecationWarnings
+1.  [function <span class="apidocSignatureSpan"></span>moment-timezone ()](#apidoc.element.moment-timezone.moment-timezone)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>ISO_8601 ()](#apidoc.element.moment-timezone.ISO_8601)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>RFC_2822 ()](#apidoc.element.moment-timezone.RFC_2822)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>calendarFormat (myMoment, now)](#apidoc.element.moment-timezone.calendarFormat)
@@ -128,6 +125,7 @@
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>parseZone ()](#apidoc.element.moment-timezone.parseZone)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>relativeTimeRounding (roundingFunction)](#apidoc.element.moment-timezone.relativeTimeRounding)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>relativeTimeThreshold (threshold, limit)](#apidoc.element.moment-timezone.relativeTimeThreshold)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>toString ()](#apidoc.element.moment-timezone.toString)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>tz (input)](#apidoc.element.moment-timezone.tz)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>tz.Zone (packedString)](#apidoc.element.moment-timezone.tz.Zone)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>unix (input)](#apidoc.element.moment-timezone.unix)
@@ -186,22 +184,103 @@
 1.  [function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>weeks ()](#apidoc.element.moment-timezone.duration.fn.weeks)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.duration.fn.</span>years ()](#apidoc.element.moment-timezone.duration.fn.years)
 
+#### [module moment-timezone.fn](#apidoc.module.moment-timezone.fn)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>add (val, period)](#apidoc.element.moment-timezone.fn.add)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>calendar (time, formats)](#apidoc.element.moment-timezone.fn.calendar)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>clone ()](#apidoc.element.moment-timezone.fn.clone)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>creationData ()](#apidoc.element.moment-timezone.fn.creationData)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>date (value)](#apidoc.element.moment-timezone.fn.date)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>dates ()](#apidoc.element.moment-timezone.fn.dates)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>day (input)](#apidoc.element.moment-timezone.fn.day)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>dayOfYear (input)](#apidoc.element.moment-timezone.fn.dayOfYear)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>days (input)](#apidoc.element.moment-timezone.fn.days)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>daysInMonth ()](#apidoc.element.moment-timezone.fn.daysInMonth)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>diff (input, units, asFloat)](#apidoc.element.moment-timezone.fn.diff)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>endOf (units)](#apidoc.element.moment-timezone.fn.endOf)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>format (inputString)](#apidoc.element.moment-timezone.fn.format)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>from (time, withoutSuffix)](#apidoc.element.moment-timezone.fn.from)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>fromNow (withoutSuffix)](#apidoc.element.moment-timezone.fn.fromNow)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>get (units)](#apidoc.element.moment-timezone.fn.get)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>hasAlignedHourOffset (input)](#apidoc.element.moment-timezone.fn.hasAlignedHourOffset)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>hour (value)](#apidoc.element.moment-timezone.fn.hour)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>hours (value)](#apidoc.element.moment-timezone.fn.hours)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>inspect ()](#apidoc.element.moment-timezone.fn.inspect)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>invalidAt ()](#apidoc.element.moment-timezone.fn.invalidAt)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isAfter (input, units)](#apidoc.element.moment-timezone.fn.isAfter)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isBefore (input, units)](#apidoc.element.moment-timezone.fn.isBefore)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isBetween (from, to, units, inclusivity)](#apidoc.element.moment-timezone.fn.isBetween)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isDST ()](#apidoc.element.moment-timezone.fn.isDST)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isDSTShifted ()](#apidoc.element.moment-timezone.fn.isDSTShifted)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isLeapYear ()](#apidoc.element.moment-timezone.fn.isLeapYear)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isLocal ()](#apidoc.element.moment-timezone.fn.isLocal)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isSame (input, units)](#apidoc.element.moment-timezone.fn.isSame)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isSameOrAfter (input, units)](#apidoc.element.moment-timezone.fn.isSameOrAfter)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isSameOrBefore (input, units)](#apidoc.element.moment-timezone.fn.isSameOrBefore)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isUTC ()](#apidoc.element.moment-timezone.fn.isUTC)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isUtc ()](#apidoc.element.moment-timezone.fn.isUtc)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isUtcOffset ()](#apidoc.element.moment-timezone.fn.isUtcOffset)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isValid ()](#apidoc.element.moment-timezone.fn.isValid)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeek (input)](#apidoc.element.moment-timezone.fn.isoWeek)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeekYear (input)](#apidoc.element.moment-timezone.fn.isoWeekYear)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeekday (input)](#apidoc.element.moment-timezone.fn.isoWeekday)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeeks (input)](#apidoc.element.moment-timezone.fn.isoWeeks)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeeksInYear ()](#apidoc.element.moment-timezone.fn.isoWeeksInYear)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>lang ()](#apidoc.element.moment-timezone.fn.lang)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>local (keepLocalTime)](#apidoc.element.moment-timezone.fn.local)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>locale (key)](#apidoc.element.moment-timezone.fn.locale)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>localeData ()](#apidoc.element.moment-timezone.fn.localeData)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>max ()](#apidoc.element.moment-timezone.fn.max)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>millisecond (value)](#apidoc.element.moment-timezone.fn.millisecond)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>milliseconds (value)](#apidoc.element.moment-timezone.fn.milliseconds)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>min ()](#apidoc.element.moment-timezone.fn.min)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>minute (value)](#apidoc.element.moment-timezone.fn.minute)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>minutes (value)](#apidoc.element.moment-timezone.fn.minutes)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>month (value)](#apidoc.element.moment-timezone.fn.month)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>months ()](#apidoc.element.moment-timezone.fn.months)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>parseZone ()](#apidoc.element.moment-timezone.fn.parseZone)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>parsingFlags ()](#apidoc.element.moment-timezone.fn.parsingFlags)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>quarter (input)](#apidoc.element.moment-timezone.fn.quarter)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>quarters (input)](#apidoc.element.moment-timezone.fn.quarters)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>second (value)](#apidoc.element.moment-timezone.fn.second)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>seconds (value)](#apidoc.element.moment-timezone.fn.seconds)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>set (units, value)](#apidoc.element.moment-timezone.fn.set)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>startOf (units)](#apidoc.element.moment-timezone.fn.startOf)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>subtract (val, period)](#apidoc.element.moment-timezone.fn.subtract)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>to (time, withoutSuffix)](#apidoc.element.moment-timezone.fn.to)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toArray ()](#apidoc.element.moment-timezone.fn.toArray)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toDate ()](#apidoc.element.moment-timezone.fn.toDate)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toISOString ()](#apidoc.element.moment-timezone.fn.toISOString)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toJSON ()](#apidoc.element.moment-timezone.fn.toJSON)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toNow (withoutSuffix)](#apidoc.element.moment-timezone.fn.toNow)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toObject ()](#apidoc.element.moment-timezone.fn.toObject)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toString ()](#apidoc.element.moment-timezone.fn.toString)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>tz (name)](#apidoc.element.moment-timezone.fn.tz)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>unix ()](#apidoc.element.moment-timezone.fn.unix)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>utc ()](#apidoc.element.moment-timezone.fn.utc)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>utcOffset (input, keepLocalTime, keepMinutes)](#apidoc.element.moment-timezone.fn.utcOffset)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>valueOf ()](#apidoc.element.moment-timezone.fn.valueOf)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>week (input)](#apidoc.element.moment-timezone.fn.week)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weekYear (input)](#apidoc.element.moment-timezone.fn.weekYear)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weekday (input)](#apidoc.element.moment-timezone.fn.weekday)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weeks (input)](#apidoc.element.moment-timezone.fn.weeks)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weeksInYear ()](#apidoc.element.moment-timezone.fn.weeksInYear)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>year (value)](#apidoc.element.moment-timezone.fn.year)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>years ()](#apidoc.element.moment-timezone.fn.years)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>zone ()](#apidoc.element.moment-timezone.fn.zone)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>zoneAbbr ()](#apidoc.element.moment-timezone.fn.zoneAbbr)
+1.  [function <span class="apidocSignatureSpan">moment-timezone.fn.</span>zoneName ()](#apidoc.element.moment-timezone.fn.zoneName)
+
 #### [module moment-timezone.tz](#apidoc.module.moment-timezone.tz)
 1.  boolean <span class="apidocSignatureSpan">moment-timezone.tz.</span>moveAmbiguousForward
 1.  boolean <span class="apidocSignatureSpan">moment-timezone.tz.</span>moveInvalidForward
 1.  [function <span class="apidocSignatureSpan">moment-timezone.</span>tz (input)](#apidoc.element.moment-timezone.tz.tz)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>Zone (packedString)](#apidoc.element.moment-timezone.tz.Zone)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>add (packed)](#apidoc.element.moment-timezone.tz.add)
-1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>createLinks (source)](#apidoc.element.moment-timezone.tz.createLinks)
-1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>filterLinkPack (input, start, end)](#apidoc.element.moment-timezone.tz.filterLinkPack)
-1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>filterYears (source, start, end)](#apidoc.element.moment-timezone.tz.filterYears)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>guess (ignoreCache)](#apidoc.element.moment-timezone.tz.guess)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>link (aliases)](#apidoc.element.moment-timezone.tz.link)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>load (data)](#apidoc.element.moment-timezone.tz.load)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>names ()](#apidoc.element.moment-timezone.tz.names)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>needsOffset (m)](#apidoc.element.moment-timezone.tz.needsOffset)
-1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>pack (source)](#apidoc.element.moment-timezone.tz.pack)
-1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>packBase60 (number, precision)](#apidoc.element.moment-timezone.tz.packBase60)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>setDefault (name)](#apidoc.element.moment-timezone.tz.setDefault)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>unpack (string)](#apidoc.element.moment-timezone.tz.unpack)
 1.  [function <span class="apidocSignatureSpan">moment-timezone.tz.</span>unpackBase60 (string)](#apidoc.element.moment-timezone.tz.unpackBase60)
@@ -226,6 +305,18 @@
 
 
 # <a name="apidoc.module.moment-timezone"></a>[module moment-timezone](#apidoc.module.moment-timezone)
+
+#### <a name="apidoc.element.moment-timezone.moment-timezone"></a>[function <span class="apidocSignatureSpan"></span>moment-timezone ()](#apidoc.element.moment-timezone.moment-timezone)
+- description and source-code
+```javascript
+function hooks() {
+    return hookCallback.apply(null, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
 
 #### <a name="apidoc.element.moment-timezone.ISO_8601"></a>[function <span class="apidocSignatureSpan">moment-timezone.</span>ISO_8601 ()](#apidoc.element.moment-timezone.ISO_8601)
 - description and source-code
@@ -751,6 +842,18 @@ function getSetRelativeTimeThreshold(threshold, limit) {
         thresholds.ss = limit - 1;
     }
     return true;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.toString"></a>[function <span class="apidocSignatureSpan">moment-timezone.</span>toString ()](#apidoc.element.moment-timezone.toString)
+- description and source-code
+```javascript
+toString = function () {
+    return toString;
 }
 ```
 - example usage
@@ -1720,6 +1823,1645 @@ n/a
 
 
 
+# <a name="apidoc.module.moment-timezone.fn"></a>[module moment-timezone.fn](#apidoc.module.moment-timezone.fn)
+
+#### <a name="apidoc.element.moment-timezone.fn.add"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>add (val, period)](#apidoc.element.moment-timezone.fn.add)
+- description and source-code
+```javascript
+add = function (val, period) {
+    var dur, tmp;
+    //invert the arguments, but complain about it
+    if (period !== null && !isNaN(+period)) {
+        deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period
+). ' +
+        'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
+        tmp = val; val = period; period = tmp;
+    }
+
+    val = typeof val === 'string' ? +val : val;
+    dur = createDuration(val, period);
+    addSubtract(this, dur, direction);
+    return this;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.calendar"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>calendar (time, formats)](#apidoc.element.moment-timezone.fn.calendar)
+- description and source-code
+```javascript
+function calendar$1(time, formats) {
+    // We want to compare the start of today, vs this.
+    // Getting start-of-today depends on whether we're local/utc/offset or not.
+    var now = time || createLocal(),
+        sod = cloneWithOffset(now, this).startOf('day'),
+        format = hooks.calendarFormat(this, sod) || 'sameElse';
+
+    var output = formats && (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
+
+    return this.format(output || this.localeData().calendar(format, this, createLocal(now)));
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.clone"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>clone ()](#apidoc.element.moment-timezone.fn.clone)
+- description and source-code
+```javascript
+function clone() {
+    return new Moment(this);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.creationData"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>creationData ()](#apidoc.element.moment-timezone.fn.creationData)
+- description and source-code
+```javascript
+function creationData() {
+    return {
+        input: this._i,
+        format: this._f,
+        locale: this._locale,
+        isUTC: this._isUTC,
+        strict: this._strict
+    };
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.date"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>date (value)](#apidoc.element.moment-timezone.fn.date)
+- description and source-code
+```javascript
+date = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.dates"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>dates ()](#apidoc.element.moment-timezone.fn.dates)
+- description and source-code
+```javascript
+dates = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.day"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>day (input)](#apidoc.element.moment-timezone.fn.day)
+- description and source-code
+```javascript
+function getSetDayOfWeek(input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+    if (input != null) {
+        input = parseWeekday(input, this.localeData());
+        return this.add(input - day, 'd');
+    } else {
+        return day;
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.dayOfYear"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>dayOfYear (input)](#apidoc.element.moment-timezone.fn.dayOfYear)
+- description and source-code
+```javascript
+function getSetDayOfYear(input) {
+    var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
+    return input == null ? dayOfYear : this.add((input - dayOfYear), 'd');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.days"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>days (input)](#apidoc.element.moment-timezone.fn.days)
+- description and source-code
+```javascript
+function getSetDayOfWeek(input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+    if (input != null) {
+        input = parseWeekday(input, this.localeData());
+        return this.add(input - day, 'd');
+    } else {
+        return day;
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.daysInMonth"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>daysInMonth ()](#apidoc.element.moment-timezone.fn.daysInMonth)
+- description and source-code
+```javascript
+function getDaysInMonth() {
+    return daysInMonth(this.year(), this.month());
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.diff"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>diff (input, units, asFloat)](#apidoc.element.moment-timezone.fn.diff)
+- description and source-code
+```javascript
+function diff(input, units, asFloat) {
+    var that,
+        zoneDelta,
+        delta, output;
+
+    if (!this.isValid()) {
+        return NaN;
+    }
+
+    that = cloneWithOffset(input, this);
+
+    if (!that.isValid()) {
+        return NaN;
+    }
+
+    zoneDelta = (that.utcOffset() - this.utcOffset()) * 6e4;
+
+    units = normalizeUnits(units);
+
+    if (units === 'year' || units === 'month' || units === 'quarter') {
+        output = monthDiff(this, that);
+        if (units === 'quarter') {
+            output = output / 3;
+        } else if (units === 'year') {
+            output = output / 12;
+        }
+    } else {
+        delta = this - that;
+        output = units === 'second' ? delta / 1e3 : // 1000
+            units === 'minute' ? delta / 6e4 : // 1000 * 60
+            units === 'hour' ? delta / 36e5 : // 1000 * 60 * 60
+            units === 'day' ? (delta - zoneDelta) / 864e5 : // 1000 * 60 * 60 * 24, negate dst
+            units === 'week' ? (delta - zoneDelta) / 6048e5 : // 1000 * 60 * 60 * 24 * 7, negate dst
+            delta;
+    }
+    return asFloat ? output : absFloor(output);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.endOf"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>endOf (units)](#apidoc.element.moment-timezone.fn.endOf)
+- description and source-code
+```javascript
+function endOf(units) {
+    units = normalizeUnits(units);
+    if (units === undefined || units === 'millisecond') {
+        return this;
+    }
+
+    // 'date' is an alias for 'day', so it should be considered as such.
+    if (units === 'date') {
+        units = 'day';
+    }
+
+    return this.startOf(units).add(1, (units === 'isoWeek' ? 'week' : units)).subtract(1, 'ms');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.format"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>format (inputString)](#apidoc.element.moment-timezone.fn.format)
+- description and source-code
+```javascript
+function format(inputString) {
+    if (!inputString) {
+        inputString = this.isUtc() ? hooks.defaultFormatUtc : hooks.defaultFormat;
+    }
+    var output = formatMoment(this, inputString);
+    return this.localeData().postformat(output);
+}
+```
+- example usage
+```shell
+...
+
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
+-url] [![Build Status][travis-image]][travis-url]
+
+IANA Time Zone Database + [Moment.js](http://momentjs.com).
+
+'''js
+var june = moment("2014-06-01T12:00:00Z");
+june.tz('America/Los_Angeles').format('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
+
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
+...
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.from"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>from (time, withoutSuffix)](#apidoc.element.moment-timezone.fn.from)
+- description and source-code
+```javascript
+function from(time, withoutSuffix) {
+    if (this.isValid() &&
+            ((isMoment(time) && time.isValid()) ||
+             createLocal(time).isValid())) {
+        return createDuration({to: this, from: time}).locale(this.locale()).humanize(!withoutSuffix);
+    } else {
+        return this.localeData().invalidDate();
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.fromNow"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>fromNow (withoutSuffix)](#apidoc.element.moment-timezone.fn.fromNow)
+- description and source-code
+```javascript
+function fromNow(withoutSuffix) {
+    return this.from(createLocal(), withoutSuffix);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.get"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>get (units)](#apidoc.element.moment-timezone.fn.get)
+- description and source-code
+```javascript
+function stringGet(units) {
+    units = normalizeUnits(units);
+    if (isFunction(this[units])) {
+        return this[units]();
+    }
+    return this;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.hasAlignedHourOffset"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>hasAlignedHourOffset (input)](#apidoc.element.moment-timezone.fn.hasAlignedHourOffset)
+- description and source-code
+```javascript
+function hasAlignedHourOffset(input) {
+    if (!this.isValid()) {
+        return false;
+    }
+    input = input ? createLocal(input).utcOffset() : 0;
+
+    return (this.utcOffset() - input) % 60 === 0;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.hour"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>hour (value)](#apidoc.element.moment-timezone.fn.hour)
+- description and source-code
+```javascript
+hour = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.hours"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>hours (value)](#apidoc.element.moment-timezone.fn.hours)
+- description and source-code
+```javascript
+hours = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.inspect"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>inspect ()](#apidoc.element.moment-timezone.fn.inspect)
+- description and source-code
+```javascript
+function inspect() {
+    if (!this.isValid()) {
+        return 'moment.invalid(/* ' + this._i + ' */)';
+    }
+    var func = 'moment';
+    var zone = '';
+    if (!this.isLocal()) {
+        func = this.utcOffset() === 0 ? 'moment.utc' : 'moment.parseZone';
+        zone = 'Z';
+    }
+    var prefix = '[' + func + '("]';
+    var year = (0 <= this.year() && this.year() <= 9999) ? 'YYYY' : 'YYYYYY';
+    var datetime = '-MM-DD[T]HH:mm:ss.SSS';
+    var suffix = zone + '[")]';
+
+    return this.format(prefix + year + datetime + suffix);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.invalidAt"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>invalidAt ()](#apidoc.element.moment-timezone.fn.invalidAt)
+- description and source-code
+```javascript
+function invalidAt() {
+    return getParsingFlags(this).overflow;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isAfter"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isAfter (input, units)](#apidoc.element.moment-timezone.fn.isAfter)
+- description and source-code
+```javascript
+function isAfter(input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input);
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() > localInput.valueOf();
+    } else {
+        return localInput.valueOf() < this.clone().startOf(units).valueOf();
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isBefore"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isBefore (input, units)](#apidoc.element.moment-timezone.fn.isBefore)
+- description and source-code
+```javascript
+function isBefore(input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input);
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() < localInput.valueOf();
+    } else {
+        return this.clone().endOf(units).valueOf() < localInput.valueOf();
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isBetween"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isBetween (from, to, units, inclusivity)](#apidoc.element.moment-timezone.fn.isBetween)
+- description and source-code
+```javascript
+function isBetween(from, to, units, inclusivity) {
+    inclusivity = inclusivity || '()';
+    return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) &&
+        (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isDST"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isDST ()](#apidoc.element.moment-timezone.fn.isDST)
+- description and source-code
+```javascript
+function isDaylightSavingTime() {
+    return (
+        this.utcOffset() > this.clone().month(0).utcOffset() ||
+        this.utcOffset() > this.clone().month(5).utcOffset()
+    );
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isDSTShifted"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isDSTShifted ()](#apidoc.element.moment-timezone.fn.isDSTShifted)
+- description and source-code
+```javascript
+isDSTShifted = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isLeapYear"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isLeapYear ()](#apidoc.element.moment-timezone.fn.isLeapYear)
+- description and source-code
+```javascript
+function getIsLeapYear() {
+    return isLeapYear(this.year());
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isLocal"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isLocal ()](#apidoc.element.moment-timezone.fn.isLocal)
+- description and source-code
+```javascript
+function isLocal() {
+    return this.isValid() ? !this._isUTC : false;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isSame"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isSame (input, units)](#apidoc.element.moment-timezone.fn.isSame)
+- description and source-code
+```javascript
+function isSame(input, units) {
+    var localInput = isMoment(input) ? input : createLocal(input),
+        inputMs;
+    if (!(this.isValid() && localInput.isValid())) {
+        return false;
+    }
+    units = normalizeUnits(units || 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() === localInput.valueOf();
+    } else {
+        inputMs = localInput.valueOf();
+        return this.clone().startOf(units).valueOf() <= inputMs && inputMs <= this.clone().endOf(units).valueOf();
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isSameOrAfter"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isSameOrAfter (input, units)](#apidoc.element.moment-timezone.fn.isSameOrAfter)
+- description and source-code
+```javascript
+function isSameOrAfter(input, units) {
+    return this.isSame(input, units) || this.isAfter(input,units);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isSameOrBefore"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isSameOrBefore (input, units)](#apidoc.element.moment-timezone.fn.isSameOrBefore)
+- description and source-code
+```javascript
+function isSameOrBefore(input, units) {
+    return this.isSame(input, units) || this.isBefore(input,units);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isUTC"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isUTC ()](#apidoc.element.moment-timezone.fn.isUTC)
+- description and source-code
+```javascript
+function isUtc() {
+    return this.isValid() ? this._isUTC && this._offset === 0 : false;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isUtc"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isUtc ()](#apidoc.element.moment-timezone.fn.isUtc)
+- description and source-code
+```javascript
+function isUtc() {
+    return this.isValid() ? this._isUTC && this._offset === 0 : false;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isUtcOffset"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isUtcOffset ()](#apidoc.element.moment-timezone.fn.isUtcOffset)
+- description and source-code
+```javascript
+function isUtcOffset() {
+    return this.isValid() ? this._isUTC : false;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isValid"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isValid ()](#apidoc.element.moment-timezone.fn.isValid)
+- description and source-code
+```javascript
+function isValid$2() {
+    return isValid(this);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isoWeek"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeek (input)](#apidoc.element.moment-timezone.fn.isoWeek)
+- description and source-code
+```javascript
+function getSetISOWeek(input) {
+    var week = weekOfYear(this, 1, 4).week;
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isoWeekYear"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeekYear (input)](#apidoc.element.moment-timezone.fn.isoWeekYear)
+- description and source-code
+```javascript
+function getSetISOWeekYear(input) {
+    return getSetWeekYearHelper.call(this,
+            input, this.isoWeek(), this.isoWeekday(), 1, 4);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isoWeekday"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeekday (input)](#apidoc.element.moment-timezone.fn.isoWeekday)
+- description and source-code
+```javascript
+function getSetISODayOfWeek(input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+
+    // behaves the same as moment#day except
+    // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+    // as a setter, sunday should belong to the previous week.
+
+    if (input != null) {
+        var weekday = parseIsoWeekday(input, this.localeData());
+        return this.day(this.day() % 7 ? weekday : weekday - 7);
+    } else {
+        return this.day() || 7;
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isoWeeks"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeeks (input)](#apidoc.element.moment-timezone.fn.isoWeeks)
+- description and source-code
+```javascript
+function getSetISOWeek(input) {
+    var week = weekOfYear(this, 1, 4).week;
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.isoWeeksInYear"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>isoWeeksInYear ()](#apidoc.element.moment-timezone.fn.isoWeeksInYear)
+- description and source-code
+```javascript
+function getISOWeeksInYear() {
+    return weeksInYear(this.year(), 1, 4);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.lang"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>lang ()](#apidoc.element.moment-timezone.fn.lang)
+- description and source-code
+```javascript
+lang = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.local"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>local (keepLocalTime)](#apidoc.element.moment-timezone.fn.local)
+- description and source-code
+```javascript
+function setOffsetToLocal(keepLocalTime) {
+    if (this._isUTC) {
+        this.utcOffset(0, keepLocalTime);
+        this._isUTC = false;
+
+        if (keepLocalTime) {
+            this.subtract(getDateOffset(this), 'm');
+        }
+    }
+    return this;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.locale"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>locale (key)](#apidoc.element.moment-timezone.fn.locale)
+- description and source-code
+```javascript
+function locale(key) {
+    var newLocaleData;
+
+    if (key === undefined) {
+        return this._locale._abbr;
+    } else {
+        newLocaleData = getLocale(key);
+        if (newLocaleData != null) {
+            this._locale = newLocaleData;
+        }
+        return this;
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.localeData"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>localeData ()](#apidoc.element.moment-timezone.fn.localeData)
+- description and source-code
+```javascript
+function localeData() {
+    return this._locale;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.max"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>max ()](#apidoc.element.moment-timezone.fn.max)
+- description and source-code
+```javascript
+max = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.millisecond"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>millisecond (value)](#apidoc.element.moment-timezone.fn.millisecond)
+- description and source-code
+```javascript
+millisecond = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.milliseconds"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>milliseconds (value)](#apidoc.element.moment-timezone.fn.milliseconds)
+- description and source-code
+```javascript
+milliseconds = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.min"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>min ()](#apidoc.element.moment-timezone.fn.min)
+- description and source-code
+```javascript
+min = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.minute"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>minute (value)](#apidoc.element.moment-timezone.fn.minute)
+- description and source-code
+```javascript
+minute = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.minutes"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>minutes (value)](#apidoc.element.moment-timezone.fn.minutes)
+- description and source-code
+```javascript
+minutes = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.month"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>month (value)](#apidoc.element.moment-timezone.fn.month)
+- description and source-code
+```javascript
+function getSetMonth(value) {
+    if (value != null) {
+        setMonth(this, value);
+        hooks.updateOffset(this, true);
+        return this;
+    } else {
+        return get(this, 'Month');
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.months"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>months ()](#apidoc.element.moment-timezone.fn.months)
+- description and source-code
+```javascript
+months = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.parseZone"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>parseZone ()](#apidoc.element.moment-timezone.fn.parseZone)
+- description and source-code
+```javascript
+function setOffsetToParsedOffset() {
+    if (this._tzm != null) {
+        this.utcOffset(this._tzm, false, true);
+    } else if (typeof this._i === 'string') {
+        var tZone = offsetFromString(matchOffset, this._i);
+        if (tZone != null) {
+            this.utcOffset(tZone);
+        }
+        else {
+            this.utcOffset(0, true);
+        }
+    }
+    return this;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.parsingFlags"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>parsingFlags ()](#apidoc.element.moment-timezone.fn.parsingFlags)
+- description and source-code
+```javascript
+function parsingFlags() {
+    return extend({}, getParsingFlags(this));
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.quarter"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>quarter (input)](#apidoc.element.moment-timezone.fn.quarter)
+- description and source-code
+```javascript
+function getSetQuarter(input) {
+    return input == null ? Math.ceil((this.month() + 1) / 3) : this.month((input - 1) * 3 + this.month() % 3);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.quarters"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>quarters (input)](#apidoc.element.moment-timezone.fn.quarters)
+- description and source-code
+```javascript
+function getSetQuarter(input) {
+    return input == null ? Math.ceil((this.month() + 1) / 3) : this.month((input - 1) * 3 + this.month() % 3);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.second"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>second (value)](#apidoc.element.moment-timezone.fn.second)
+- description and source-code
+```javascript
+second = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.seconds"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>seconds (value)](#apidoc.element.moment-timezone.fn.seconds)
+- description and source-code
+```javascript
+seconds = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.set"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>set (units, value)](#apidoc.element.moment-timezone.fn.set)
+- description and source-code
+```javascript
+function stringSet(units, value) {
+    if (typeof units === 'object') {
+        units = normalizeObjectUnits(units);
+        var prioritized = getPrioritizedUnits(units);
+        for (var i = 0; i < prioritized.length; i++) {
+            this[prioritized[i].unit](units[prioritized[i].unit]);
+        }
+    } else {
+        units = normalizeUnits(units);
+        if (isFunction(this[units])) {
+            return this[units](value);
+        }
+    }
+    return this;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.startOf"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>startOf (units)](#apidoc.element.moment-timezone.fn.startOf)
+- description and source-code
+```javascript
+function startOf(units) {
+    units = normalizeUnits(units);
+    // the following switch intentionally omits break keywords
+    // to utilize falling through the cases.
+    switch (units) {
+        case 'year':
+            this.month(0);
+<span class="apidocCodeCommentSpan">            /* falls through */
+</span>        case 'quarter':
+        case 'month':
+            this.date(1);
+            /* falls through */
+        case 'week':
+        case 'isoWeek':
+        case 'day':
+        case 'date':
+            this.hours(0);
+            /* falls through */
+        case 'hour':
+            this.minutes(0);
+            /* falls through */
+        case 'minute':
+            this.seconds(0);
+            /* falls through */
+        case 'second':
+            this.milliseconds(0);
+    }
+
+    // weeks are a special case
+    if (units === 'week') {
+        this.weekday(0);
+    }
+    if (units === 'isoWeek') {
+        this.isoWeekday(1);
+    }
+
+    // quarters are also special
+    if (units === 'quarter') {
+        this.month(Math.floor(this.month() / 3) * 3);
+    }
+
+    return this;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.subtract"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>subtract (val, period)](#apidoc.element.moment-timezone.fn.subtract)
+- description and source-code
+```javascript
+subtract = function (val, period) {
+    var dur, tmp;
+    //invert the arguments, but complain about it
+    if (period !== null && !isNaN(+period)) {
+        deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period
+). ' +
+        'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
+        tmp = val; val = period; period = tmp;
+    }
+
+    val = typeof val === 'string' ? +val : val;
+    dur = createDuration(val, period);
+    addSubtract(this, dur, direction);
+    return this;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.to"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>to (time, withoutSuffix)](#apidoc.element.moment-timezone.fn.to)
+- description and source-code
+```javascript
+function to(time, withoutSuffix) {
+    if (this.isValid() &&
+            ((isMoment(time) && time.isValid()) ||
+             createLocal(time).isValid())) {
+        return createDuration({from: this, to: time}).locale(this.locale()).humanize(!withoutSuffix);
+    } else {
+        return this.localeData().invalidDate();
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.toArray"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toArray ()](#apidoc.element.moment-timezone.fn.toArray)
+- description and source-code
+```javascript
+function toArray() {
+    var m = this;
+    return [m.year(), m.month(), m.date(), m.hour(), m.minute(), m.second(), m.millisecond()];
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.toDate"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toDate ()](#apidoc.element.moment-timezone.fn.toDate)
+- description and source-code
+```javascript
+function toDate() {
+    return new Date(this.valueOf());
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.toISOString"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toISOString ()](#apidoc.element.moment-timezone.fn.toISOString)
+- description and source-code
+```javascript
+function toISOString() {
+    if (!this.isValid()) {
+        return null;
+    }
+    var m = this.clone().utc();
+    if (m.year() < 0 || m.year() > 9999) {
+        return formatMoment(m, 'YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+    }
+    if (isFunction(Date.prototype.toISOString)) {
+        // native implementation is ~50x faster, use it when we can
+        return this.toDate().toISOString();
+    }
+    return formatMoment(m, 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.toJSON"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toJSON ()](#apidoc.element.moment-timezone.fn.toJSON)
+- description and source-code
+```javascript
+function toJSON() {
+    // new Date(NaN).toJSON() === null
+    return this.isValid() ? this.toISOString() : null;
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.toNow"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toNow (withoutSuffix)](#apidoc.element.moment-timezone.fn.toNow)
+- description and source-code
+```javascript
+function toNow(withoutSuffix) {
+    return this.to(createLocal(), withoutSuffix);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.toObject"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toObject ()](#apidoc.element.moment-timezone.fn.toObject)
+- description and source-code
+```javascript
+function toObject() {
+    var m = this;
+    return {
+        years: m.year(),
+        months: m.month(),
+        date: m.date(),
+        hours: m.hours(),
+        minutes: m.minutes(),
+        seconds: m.seconds(),
+        milliseconds: m.milliseconds()
+    };
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.toString"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>toString ()](#apidoc.element.moment-timezone.fn.toString)
+- description and source-code
+```javascript
+function toString() {
+    return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.tz"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>tz (name)](#apidoc.element.moment-timezone.fn.tz)
+- description and source-code
+```javascript
+tz = function (name) {
+		if (name) {
+			this._z = getZone(name);
+			if (this._z) {
+				moment.updateOffset(this);
+			} else {
+				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
+			}
+			return this;
+		}
+		if (this._z) { return this._z.name; }
+	}
+```
+- example usage
+```shell
+...
+
+[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
+-url] [![Build Status][travis-image]][travis-url]
+
+IANA Time Zone Database + [Moment.js](http://momentjs.com).
+
+'''js
+var june = moment("2014-06-01T12:00:00Z");
+june.tz('America/Los_Angeles').format('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
+
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
+...
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.unix"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>unix ()](#apidoc.element.moment-timezone.fn.unix)
+- description and source-code
+```javascript
+function unix() {
+    return Math.floor(this.valueOf() / 1000);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.utc"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>utc ()](#apidoc.element.moment-timezone.fn.utc)
+- description and source-code
+```javascript
+utc = function () {
+			this._z = null;
+			return old.apply(this, arguments);
+		}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.utcOffset"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>utcOffset (input, keepLocalTime, keepMinutes)](#apidoc.element.moment-timezone.fn.utcOffset)
+- description and source-code
+```javascript
+function getSetOffset(input, keepLocalTime, keepMinutes) {
+    var offset = this._offset || 0,
+        localAdjust;
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    if (input != null) {
+        if (typeof input === 'string') {
+            input = offsetFromString(matchShortOffset, input);
+            if (input === null) {
+                return this;
+            }
+        } else if (Math.abs(input) < 16 && !keepMinutes) {
+            input = input * 60;
+        }
+        if (!this._isUTC && keepLocalTime) {
+            localAdjust = getDateOffset(this);
+        }
+        this._offset = input;
+        this._isUTC = true;
+        if (localAdjust != null) {
+            this.add(localAdjust, 'm');
+        }
+        if (offset !== input) {
+            if (!keepLocalTime || this._changeInProgress) {
+                addSubtract(this, createDuration(input - offset, 'm'), 1, false);
+            } else if (!this._changeInProgress) {
+                this._changeInProgress = true;
+                hooks.updateOffset(this, true);
+                this._changeInProgress = null;
+            }
+        }
+        return this;
+    } else {
+        return this._isUTC ? offset : getDateOffset(this);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.valueOf"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>valueOf ()](#apidoc.element.moment-timezone.fn.valueOf)
+- description and source-code
+```javascript
+function valueOf() {
+    return this._d.valueOf() - ((this._offset || 0) * 60000);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.week"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>week (input)](#apidoc.element.moment-timezone.fn.week)
+- description and source-code
+```javascript
+function getSetWeek(input) {
+    var week = this.localeData().week(this);
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.weekYear"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weekYear (input)](#apidoc.element.moment-timezone.fn.weekYear)
+- description and source-code
+```javascript
+function getSetWeekYear(input) {
+    return getSetWeekYearHelper.call(this,
+            input,
+            this.week(),
+            this.weekday(),
+            this.localeData()._week.dow,
+            this.localeData()._week.doy);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.weekday"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weekday (input)](#apidoc.element.moment-timezone.fn.weekday)
+- description and source-code
+```javascript
+function getSetLocaleDayOfWeek(input) {
+    if (!this.isValid()) {
+        return input != null ? this : NaN;
+    }
+    var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+    return input == null ? weekday : this.add(input - weekday, 'd');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.weeks"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weeks (input)](#apidoc.element.moment-timezone.fn.weeks)
+- description and source-code
+```javascript
+function getSetWeek(input) {
+    var week = this.localeData().week(this);
+    return input == null ? week : this.add((input - week) * 7, 'd');
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.weeksInYear"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>weeksInYear ()](#apidoc.element.moment-timezone.fn.weeksInYear)
+- description and source-code
+```javascript
+function getWeeksInYear() {
+    var weekInfo = this.localeData()._week;
+    return weeksInYear(this.year(), weekInfo.dow, weekInfo.doy);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.year"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>year (value)](#apidoc.element.moment-timezone.fn.year)
+- description and source-code
+```javascript
+year = function (value) {
+    if (value != null) {
+        set$1(this, unit, value);
+        hooks.updateOffset(this, keepTime);
+        return this;
+    } else {
+        return get(this, unit);
+    }
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.years"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>years ()](#apidoc.element.moment-timezone.fn.years)
+- description and source-code
+```javascript
+years = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.zone"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>zone ()](#apidoc.element.moment-timezone.fn.zone)
+- description and source-code
+```javascript
+zone = function () {
+    if (hooks.deprecationHandler != null) {
+        hooks.deprecationHandler(null, msg);
+    }
+    if (firstTime) {
+        var args = [];
+        var arg;
+        for (var i = 0; i < arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
+                for (var key in arguments[0]) {
+                    arg += key + ': ' + arguments[0][key] + ', ';
+                }
+                arg = arg.slice(0, -2); // Remove trailing comma and space
+            } else {
+                arg = arguments[i];
+            }
+            args.push(arg);
+        }
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
+        firstTime = false;
+    }
+    return fn.apply(this, arguments);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.zoneAbbr"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>zoneAbbr ()](#apidoc.element.moment-timezone.fn.zoneAbbr)
+- description and source-code
+```javascript
+zoneAbbr = function () {
+			if (this._z) { return this._z.abbr(this); }
+			return old.call(this);
+		}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.moment-timezone.fn.zoneName"></a>[function <span class="apidocSignatureSpan">moment-timezone.fn.</span>zoneName ()](#apidoc.element.moment-timezone.fn.zoneName)
+- description and source-code
+```javascript
+zoneName = function () {
+			if (this._z) { return this._z.abbr(this); }
+			return old.call(this);
+		}
+```
+- example usage
+```shell
+n/a
+```
+
+
+
 # <a name="apidoc.module.moment-timezone.tz"></a>[module moment-timezone.tz](#apidoc.module.moment-timezone.tz)
 
 #### <a name="apidoc.element.moment-timezone.tz.tz"></a>[function <span class="apidocSignatureSpan">moment-timezone.</span>tz (input)](#apidoc.element.moment-timezone.tz.tz)
@@ -1803,86 +3545,6 @@ function addZone(packed) {
 n/a
 ```
 
-#### <a name="apidoc.element.moment-timezone.tz.createLinks"></a>[function <span class="apidocSignatureSpan">moment-timezone.tz.</span>createLinks (source)](#apidoc.element.moment-timezone.tz.createLinks)
-- description and source-code
-```javascript
-function createLinks(source) {
-		var zones = [],
-			links = [];
-
-		if (source.links) {
-			links = source.links.slice();
-		}
-
-		findAndCreateLinks(source.zones, zones, links);
-
-		return {
-			version : source.version,
-			zones   : zones,
-			links   : links.sort()
-		};
-	}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.moment-timezone.tz.filterLinkPack"></a>[function <span class="apidocSignatureSpan">moment-timezone.tz.</span>filterLinkPack (input, start, end)](#apidoc.element.moment-timezone.tz.filterLinkPack)
-- description and source-code
-```javascript
-function filterLinkPack(input, start, end) {
-		var i,
-			inputZones = input.zones,
-			outputZones = [],
-			output;
-
-		for (i = 0; i < inputZones.length; i++) {
-			outputZones[i] = filterYears(inputZones[i], start, end);
-		}
-
-		output = createLinks({
-			zones : outputZones,
-			links : input.links.slice(),
-			version : input.version
-		});
-
-		for (i = 0; i < output.zones.length; i++) {
-			output.zones[i] = pack(output.zones[i]);
-		}
-
-		return output;
-	}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.moment-timezone.tz.filterYears"></a>[function <span class="apidocSignatureSpan">moment-timezone.tz.</span>filterYears (source, start, end)](#apidoc.element.moment-timezone.tz.filterYears)
-- description and source-code
-```javascript
-function filterYears(source, start, end) {
-		var slice     = Array.prototype.slice,
-			indices   = findStartAndEndIndex(source.untils, start, end),
-			untils    = slice.apply(source.untils, indices);
-
-		untils[untils.length - 1] = null;
-
-		return {
-			name       : source.name,
-			abbrs      : slice.apply(source.abbrs, indices),
-			untils     : untils,
-			offsets    : slice.apply(source.offsets, indices),
-			population : source.population
-		};
-	}
-```
-- example usage
-```shell
-n/a
-```
-
 #### <a name="apidoc.element.moment-timezone.tz.guess"></a>[function <span class="apidocSignatureSpan">moment-timezone.tz.</span>guess (ignoreCache)](#apidoc.element.moment-timezone.tz.guess)
 - description and source-code
 ```javascript
@@ -1938,16 +3600,7 @@ function loadData(data) {
 ```
 - example usage
 ```shell
-...
-
-
-
-
-
-
-var moment = module.exports = require("./moment-timezone");
-moment.tz.load(require('./data/packed/latest.json'));
-...
+n/a
 ```
 
 #### <a name="apidoc.element.moment-timezone.tz.names"></a>[function <span class="apidocSignatureSpan">moment-timezone.tz.</span>names ()](#apidoc.element.moment-timezone.tz.names)
@@ -1975,57 +3628,6 @@ n/a
 ```javascript
 function needsOffset(m) {
 		return !!(m._a && (m._tzm === undefined));
-	}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.moment-timezone.tz.pack"></a>[function <span class="apidocSignatureSpan">moment-timezone.tz.</span>pack (source)](#apidoc.element.moment-timezone.tz.pack)
-- description and source-code
-```javascript
-function pack(source) {
-		validatePackData(source);
-		return [
-			source.name,
-			packAbbrsAndOffsets(source),
-			packUntils(source.untils) + packPopulation(source.population)
-		].join('|');
-	}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.moment-timezone.tz.packBase60"></a>[function <span class="apidocSignatureSpan">moment-timezone.tz.</span>packBase60 (number, precision)](#apidoc.element.moment-timezone.tz.packBase60)
-- description and source-code
-```javascript
-function packBase60(number, precision) {
-		var output = '',
-			absolute = Math.abs(number),
-			whole = Math.floor(absolute),
-			fraction = packBase60Fraction(absolute - whole, Math.min(~~precision, 10));
-
-		while (whole > 0) {
-			output = BASE60[whole % 60] + output;
-			whole = Math.floor(whole / 60);
-		}
-
-		if (number < 0) {
-			output = '-' + output;
-		}
-
-		if (output && fraction) {
-			return output + fraction;
-		}
-
-		if (!fraction && output === '-') {
-			return '0';
-		}
-
-		return output || fraction || '0';
 	}
 ```
 - example usage
