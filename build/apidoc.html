@@ -51,7 +51,7 @@
 
         href="http://momentjs.com/timezone/"
 
-    >moment-timezone (v0.5.11)</a>
+    >moment-timezone (v0.5.13)</a>
 </h1>
 <h4>Parse and display moments in any timezone.</h4>
 <div class="apidocSectionDiv"><a
@@ -64,6 +64,15 @@
         <li>
 
             <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">moment-timezone.</span>suppressDeprecationWarnings</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.moment-timezone">
+            function <span class="apidocSignatureSpan"></span>moment-timezone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
 
         </li>
 
@@ -288,6 +297,15 @@
             <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.relativeTimeThreshold">
             function <span class="apidocSignatureSpan">moment-timezone.</span>relativeTimeThreshold
             <span class="apidocSignatureSpan">(threshold, limit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.moment-timezone.toString">
+            function <span class="apidocSignatureSpan">moment-timezone.</span>toString
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -983,6 +1001,21 @@
 
 
     <h2>
+        <a href="#apidoc.element.moment-timezone.moment-timezone" id="apidoc.element.moment-timezone.moment-timezone">
+        function <span class="apidocSignatureSpan"></span>moment-timezone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hooks() {
+    return hookCallback.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.moment-timezone.ISO_8601" id="apidoc.element.moment-timezone.ISO_8601">
         function <span class="apidocSignatureSpan">moment-timezone.</span>ISO_8601
         <span class="apidocSignatureSpan">()</span>
@@ -1582,6 +1615,21 @@
         thresholds.ss = limit - 1;
     }
     return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.moment-timezone.toString" id="apidoc.element.moment-timezone.toString">
+        function <span class="apidocSignatureSpan">moment-timezone.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return toString;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2860,16 +2908,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		addLink(data.links);
 		tz.dataVersion = data.version;
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-
-
-
-
-
-var moment = module.exports = require(&#x22;./moment-timezone&#x22;);
-moment.tz.<span class="apidocCodeKeywordSpan">load</span>(require(&#x27;./data/packed/latest.json&#x27;));
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
