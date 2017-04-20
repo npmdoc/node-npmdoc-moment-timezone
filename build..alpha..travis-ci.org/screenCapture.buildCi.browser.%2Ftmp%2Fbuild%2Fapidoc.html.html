@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://momentjs.com/timezone/"
-
-    >moment-timezone (v0.5.13)</a>
+    <a href="http://momentjs.com/timezone/">moment-timezone (v0.5.13)</a>
 </h1>
 <h4>Parse and display moments in any timezone.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.moment-timezone">module moment-timezone</a><ol>
 
@@ -2212,13 +2205,13 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getCalendarFormat(myMoment, now) {
-    var diff = myMoment.diff(now, &#x27;days&#x27;, true);
-    return diff &#x3c; -6 ? &#x27;sameElse&#x27; :
-            diff &#x3c; -1 ? &#x27;lastWeek&#x27; :
-            diff &#x3c; 0 ? &#x27;lastDay&#x27; :
-            diff &#x3c; 1 ? &#x27;sameDay&#x27; :
-            diff &#x3c; 2 ? &#x27;nextDay&#x27; :
-            diff &#x3c; 7 ? &#x27;nextWeek&#x27; : &#x27;sameElse&#x27;;
+    var diff = myMoment.diff(now, 'days', true);
+    return diff &lt; -6 ? 'sameElse' :
+            diff &lt; -1 ? 'lastWeek' :
+            diff &lt; 0 ? 'lastDay' :
+            diff &lt; 1 ? 'sameDay' :
+            diff &lt; 2 ? 'nextDay' :
+            diff &lt; 7 ? 'nextWeek' : 'sameElse';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2239,12 +2232,12 @@
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -2252,7 +2245,7 @@
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -2274,11 +2267,11 @@
         var parentConfig = baseConfig;
         config.abbr = name;
         if (locales[name] != null) {
-            deprecateSimple(&#x27;defineLocaleOverride&#x27;,
-                    &#x27;use moment.updateLocale(localeName, config) to change &#x27; +
-                    &#x27;an existing locale. moment.defineLocale(localeName, &#x27; +
-                    &#x27;config) should only be used for creating a new locale &#x27; +
-                    &#x27;See http://momentjs.com/guides/#/warnings/define-locale/ for more info.&#x27;);
+            deprecateSimple('defineLocaleOverride',
+                    'use moment.updateLocale(localeName, config) to change ' +
+                    'an existing locale. moment.defineLocale(localeName, ' +
+                    'config) should only be used for creating a new locale ' +
+                    'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
             parentConfig = locales[name]._config;
         } else if (config.parentLocale != null) {
             if (locales[config.parentLocale] != null) {
@@ -2304,7 +2297,7 @@
 
         // backwards compat for now: also set the locale
         // make sure we set the locale AFTER all child locales have been
-        // created, so we won&#x27;t end up with the child locale set.
+        // created, so we won't end up with the child locale set.
         getSetGlobalLocale(name);
 
 
@@ -2349,7 +2342,7 @@
             duration.milliseconds = input;
         }
     } else if (!!(match = aspNetRegex.exec(input))) {
-        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        sign = (match[1] === '-') ? -1 : 1;
         duration = {
             y  : 0,
             d  : toInt(match[DATE])                         * sign,
@@ -2359,7 +2352,7 @@
             ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
         };
     } else if (!!(match = isoRegex.exec(input))) {
-        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        sign = (match[1] === '-') ? -1 : 1;
         duration = {
             y : parseIso(match[2], sign),
             M : parseIso(match[3], sign),
@@ -2371,7 +2364,7 @@
         };
     } else if (duration == null) {// checks for null or undefined
         duration = {};
-    } else if (typeof duration === &#x27;object&#x27; &#x26;&#x26; (&#x27;from&#x27; in duration || &#x27;to&#x27; in duration)) {
+    } else if (typeof duration === 'object' &amp;&amp; ('from' in duration || 'to' in duration)) {
         diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
 
         duration = {};
@@ -2381,7 +2374,7 @@
 
     ret = new Duration(duration);
 
-    if (isDuration(input) &#x26;&#x26; hasOwnProp(input, &#x27;_locale&#x27;)) {
+    if (isDuration(input) &amp;&amp; hasOwnProp(input, '_locale')) {
         ret._locale = input._locale;
     }
 
@@ -2423,7 +2416,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isDate(input) {
-    return input instanceof Date || Object.prototype.toString.call(input) === &#x27;[object Date]&#x27;;
+    return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2453,7 +2446,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isMoment(obj) {
-    return obj instanceof Moment || (obj != null &#x26;&#x26; obj._isAMomentObject != null);
+    return obj instanceof Moment || (obj != null &amp;&amp; obj._isAMomentObject != null);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2474,12 +2467,12 @@
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -2487,7 +2480,7 @@
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -2511,12 +2504,12 @@
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -2524,7 +2517,7 @@
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -2574,7 +2567,7 @@
     <li>description and source-code<pre class="apidocCodePre">function getLocale(key) {
     var locale;
 
-    if (key &#x26;&#x26; key._locale &#x26;&#x26; key._locale._abbr) {
+    if (key &amp;&amp; key._locale &amp;&amp; key._locale._abbr) {
         key = key._locale._abbr;
     }
 
@@ -2623,7 +2616,7 @@
     <li>description and source-code<pre class="apidocCodePre">function max() {
     var args = [].slice.call(arguments, 0);
 
-    return pickBy(&#x27;isAfter&#x27;, args);
+    return pickBy('isAfter', args);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2640,7 +2633,7 @@
     <li>description and source-code<pre class="apidocCodePre">function min() {
     var args = [].slice.call(arguments, 0);
 
-    return pickBy(&#x27;isBefore&#x27;, args);
+    return pickBy('isBefore', args);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2670,7 +2663,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listMonths(format, index) {
-    return listMonthsImpl(format, index, &#x27;months&#x27;);
+    return listMonthsImpl(format, index, 'months');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2685,7 +2678,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listMonthsShort(format, index) {
-    return listMonthsImpl(format, index, &#x27;monthsShort&#x27;);
+    return listMonthsImpl(format, index, 'monthsShort');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2700,7 +2693,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function normalizeUnits(units) {
-    return typeof units === &#x27;string&#x27; ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+    return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2730,7 +2723,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">parseTwoDigitYear = function (input) {
-    return toInt(input) + (toInt(input) &#x3e; 68 ? 1900 : 2000);
+    return toInt(input) + (toInt(input) &gt; 68 ? 1900 : 2000);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2763,7 +2756,7 @@
     if (roundingFunction === undefined) {
         return round;
     }
-    if (typeof(roundingFunction) === &#x27;function&#x27;) {
+    if (typeof(roundingFunction) === 'function') {
         round = roundingFunction;
         return true;
     }
@@ -2789,7 +2782,7 @@
         return thresholds[threshold];
     }
     thresholds[threshold] = limit;
-    if (threshold === &#x27;s&#x27;) {
+    if (threshold === 's') {
         thresholds.ss = limit - 1;
     }
     return true;
@@ -2812,8 +2805,8 @@
 			zone = getZone(name),
 			out  = moment.utc.apply(null, args);
 
-		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
-			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		if (zone &amp;&amp; !moment.isMoment(input) &amp;&amp; needsOffset(out)) {
+			out.add(zone.parse(out), 'minutes');
 		}
 
 		out.tz(name);
@@ -2828,15 +2821,15 @@
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
 ```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+var june = moment("2014-06-01T12:00:00Z");
+june.<span class="apidocCodeKeywordSpan">tz</span>('America/Los_Angeles').format('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
 ...</pre></li>
     </ul>
 
@@ -2924,15 +2917,15 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			offset;
 
 		if (mom._z === undefined) {
-			if (zone &#x26;&#x26; needsOffset(mom) &#x26;&#x26; !mom._isUTC) {
+			if (zone &amp;&amp; needsOffset(mom) &amp;&amp; !mom._isUTC) {
 				mom._d = moment.utc(mom._a)._d;
-				mom.utc().add(zone.parse(mom), &#x27;minutes&#x27;);
+				mom.utc().add(zone.parse(mom), 'minutes');
 			}
 			mom._z = zone;
 		}
 		if (mom._z) {
 			offset = mom._z.offset(mom);
-			if (Math.abs(offset) &#x3c; 16) {
+			if (Math.abs(offset) &lt; 16) {
 				offset = offset / 60;
 			}
 			if (mom.utcOffset !== undefined) {
@@ -2970,7 +2963,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listWeekdays(localeSorted, format, index) {
-    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdays&#x27;);
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdays');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2985,7 +2978,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listWeekdaysMin(localeSorted, format, index) {
-    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdaysMin&#x27;);
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysMin');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3000,7 +2993,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listWeekdaysShort(localeSorted, format, index) {
-    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdaysShort&#x27;);
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysShort');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3059,7 +3052,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             duration.milliseconds = input;
         }
     } else if (!!(match = aspNetRegex.exec(input))) {
-        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        sign = (match[1] === '-') ? -1 : 1;
         duration = {
             y  : 0,
             d  : toInt(match[DATE])                         * sign,
@@ -3069,7 +3062,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
         };
     } else if (!!(match = isoRegex.exec(input))) {
-        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        sign = (match[1] === '-') ? -1 : 1;
         duration = {
             y : parseIso(match[2], sign),
             M : parseIso(match[3], sign),
@@ -3081,7 +3074,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         };
     } else if (duration == null) {// checks for null or undefined
         duration = {};
-    } else if (typeof duration === &#x27;object&#x27; &#x26;&#x26; (&#x27;from&#x27; in duration || &#x27;to&#x27; in duration)) {
+    } else if (typeof duration === 'object' &amp;&amp; ('from' in duration || 'to' in duration)) {
         diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
 
         duration = {};
@@ -3091,7 +3084,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
     ret = new Duration(duration);
 
-    if (isDuration(input) &#x26;&#x26; hasOwnProp(input, &#x27;_locale&#x27;)) {
+    if (isDuration(input) &amp;&amp; hasOwnProp(input, '_locale')) {
         ret._locale = input._locale;
     }
 
@@ -3140,8 +3133,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
     // if we have a mix of positive and negative values, bubble down first
     // check: https://github.com/moment/moment/issues/2166
-    if (!((milliseconds &#x3e;= 0 &#x26;&#x26; days &#x3e;= 0 &#x26;&#x26; months &#x3e;= 0) ||
-            (milliseconds &#x3c;= 0 &#x26;&#x26; days &#x3c;= 0 &#x26;&#x26; months &#x3c;= 0))) {
+    if (!((milliseconds &gt;= 0 &amp;&amp; days &gt;= 0 &amp;&amp; months &gt;= 0) ||
+            (milliseconds &lt;= 0 &amp;&amp; days &lt;= 0 &amp;&amp; months &lt;= 0))) {
         milliseconds += absCeil(monthsToDays(months) + days) * 864e5;
         days = 0;
         months = 0;
@@ -3167,7 +3160,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     months += monthsFromDays;
     days -= absCeil(monthsToDays(monthsFromDays));
 
-    // 12 months -&#x3e; 1 year
+    // 12 months -&gt; 1 year
     years = absFloor(months / 12);
     months %= 12;
 
@@ -3242,22 +3235,22 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
     units = normalizeUnits(units);
 
-    if (units === &#x27;month&#x27; || units === &#x27;year&#x27;) {
+    if (units === 'month' || units === 'year') {
         days   = this._days   + milliseconds / 864e5;
         months = this._months + daysToMonths(days);
-        return units === &#x27;month&#x27; ? months : months / 12;
+        return units === 'month' ? months : months / 12;
     } else {
         // handle milliseconds separately because of floating point math errors (issue #1867)
         days = this._days + Math.round(monthsToDays(this._months));
         switch (units) {
-            case &#x27;week&#x27;   : return days / 7     + milliseconds / 6048e5;
-            case &#x27;day&#x27;    : return days         + milliseconds / 864e5;
-            case &#x27;hour&#x27;   : return days * 24    + milliseconds / 36e5;
-            case &#x27;minute&#x27; : return days * 1440  + milliseconds / 6e4;
-            case &#x27;second&#x27; : return days * 86400 + milliseconds / 1000;
+            case 'week'   : return days / 7     + milliseconds / 6048e5;
+            case 'day'    : return days         + milliseconds / 864e5;
+            case 'hour'   : return days * 24    + milliseconds / 36e5;
+            case 'minute' : return days * 1440  + milliseconds / 6e4;
+            case 'second' : return days * 86400 + milliseconds / 1000;
             // Math.floor prevents floating point math errors here
-            case &#x27;millisecond&#x27;: return Math.floor(days * 864e5) + milliseconds;
-            default: throw new Error(&#x27;Unknown unit &#x27; + units);
+            case 'millisecond': return Math.floor(days * 864e5) + milliseconds;
+            default: throw new Error('Unknown unit ' + units);
         }
     }
 }</pre></li>
@@ -3410,7 +3403,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function get$2(units) {
     units = normalizeUnits(units);
-    return this.isValid() ? this[units + &#x27;s&#x27;]() : NaN;
+    return this.isValid() ? this[units + 's']() : NaN;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3487,12 +3480,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -3500,7 +3493,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -3649,13 +3642,13 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var months       = abs$1(this._months);
     var minutes, hours, years;
 
-    // 3600 seconds -&#x3e; 60 minutes -&#x3e; 1 hour
+    // 3600 seconds -&gt; 60 minutes -&gt; 1 hour
     minutes           = absFloor(seconds / 60);
     hours             = absFloor(minutes / 60);
     seconds %= 60;
     minutes %= 60;
 
-    // 12 months -&#x3e; 1 year
+    // 12 months -&gt; 1 year
     years  = absFloor(months / 12);
     months %= 12;
 
@@ -3670,20 +3663,20 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var total = this.asSeconds();
 
     if (!total) {
-        // this is the same as C#&#x27;s (Noda) and python (isodate)...
+        // this is the same as C#'s (Noda) and python (isodate)...
         // but not other JS (goog.date)
-        return &#x27;P0D&#x27;;
+        return 'P0D';
     }
 
-    return (total &#x3c; 0 ? &#x27;-&#x27; : &#x27;&#x27;) +
-        &#x27;P&#x27; +
-        (Y ? Y + &#x27;Y&#x27; : &#x27;&#x27;) +
-        (M ? M + &#x27;M&#x27; : &#x27;&#x27;) +
-        (D ? D + &#x27;D&#x27; : &#x27;&#x27;) +
-        ((h || m || s) ? &#x27;T&#x27; : &#x27;&#x27;) +
-        (h ? h + &#x27;H&#x27; : &#x27;&#x27;) +
-        (m ? m + &#x27;M&#x27; : &#x27;&#x27;) +
-        (s ? s + &#x27;S&#x27; : &#x27;&#x27;);
+    return (total &lt; 0 ? '-' : '') +
+        'P' +
+        (Y ? Y + 'Y' : '') +
+        (M ? M + 'M' : '') +
+        (D ? D + 'D' : '') +
+        ((h || m || s) ? 'T' : '') +
+        (h ? h + 'H' : '') +
+        (m ? m + 'M' : '') +
+        (s ? s + 'S' : '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3704,12 +3697,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -3717,7 +3710,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -3751,13 +3744,13 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var months       = abs$1(this._months);
     var minutes, hours, years;
 
-    // 3600 seconds -&#x3e; 60 minutes -&#x3e; 1 hour
+    // 3600 seconds -&gt; 60 minutes -&gt; 1 hour
     minutes           = absFloor(seconds / 60);
     hours             = absFloor(minutes / 60);
     seconds %= 60;
     minutes %= 60;
 
-    // 12 months -&#x3e; 1 year
+    // 12 months -&gt; 1 year
     years  = absFloor(months / 12);
     months %= 12;
 
@@ -3772,20 +3765,20 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var total = this.asSeconds();
 
     if (!total) {
-        // this is the same as C#&#x27;s (Noda) and python (isodate)...
+        // this is the same as C#'s (Noda) and python (isodate)...
         // but not other JS (goog.date)
-        return &#x27;P0D&#x27;;
+        return 'P0D';
     }
 
-    return (total &#x3c; 0 ? &#x27;-&#x27; : &#x27;&#x27;) +
-        &#x27;P&#x27; +
-        (Y ? Y + &#x27;Y&#x27; : &#x27;&#x27;) +
-        (M ? M + &#x27;M&#x27; : &#x27;&#x27;) +
-        (D ? D + &#x27;D&#x27; : &#x27;&#x27;) +
-        ((h || m || s) ? &#x27;T&#x27; : &#x27;&#x27;) +
-        (h ? h + &#x27;H&#x27; : &#x27;&#x27;) +
-        (m ? m + &#x27;M&#x27; : &#x27;&#x27;) +
-        (s ? s + &#x27;S&#x27; : &#x27;&#x27;);
+    return (total &lt; 0 ? '-' : '') +
+        'P' +
+        (Y ? Y + 'Y' : '') +
+        (M ? M + 'M' : '') +
+        (D ? D + 'D' : '') +
+        ((h || m || s) ? 'T' : '') +
+        (h ? h + 'H' : '') +
+        (m ? m + 'M' : '') +
+        (s ? s + 'S' : '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3816,13 +3809,13 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var months       = abs$1(this._months);
     var minutes, hours, years;
 
-    // 3600 seconds -&#x3e; 60 minutes -&#x3e; 1 hour
+    // 3600 seconds -&gt; 60 minutes -&gt; 1 hour
     minutes           = absFloor(seconds / 60);
     hours             = absFloor(minutes / 60);
     seconds %= 60;
     minutes %= 60;
 
-    // 12 months -&#x3e; 1 year
+    // 12 months -&gt; 1 year
     years  = absFloor(months / 12);
     months %= 12;
 
@@ -3837,20 +3830,20 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var total = this.asSeconds();
 
     if (!total) {
-        // this is the same as C#&#x27;s (Noda) and python (isodate)...
+        // this is the same as C#'s (Noda) and python (isodate)...
         // but not other JS (goog.date)
-        return &#x27;P0D&#x27;;
+        return 'P0D';
     }
 
-    return (total &#x3c; 0 ? &#x27;-&#x27; : &#x27;&#x27;) +
-        &#x27;P&#x27; +
-        (Y ? Y + &#x27;Y&#x27; : &#x27;&#x27;) +
-        (M ? M + &#x27;M&#x27; : &#x27;&#x27;) +
-        (D ? D + &#x27;D&#x27; : &#x27;&#x27;) +
-        ((h || m || s) ? &#x27;T&#x27; : &#x27;&#x27;) +
-        (h ? h + &#x27;H&#x27; : &#x27;&#x27;) +
-        (m ? m + &#x27;M&#x27; : &#x27;&#x27;) +
-        (s ? s + &#x27;S&#x27; : &#x27;&#x27;);
+    return (total &lt; 0 ? '-' : '') +
+        'P' +
+        (Y ? Y + 'Y' : '') +
+        (M ? M + 'M' : '') +
+        (D ? D + 'D' : '') +
+        ((h || m || s) ? 'T' : '') +
+        (h ? h + 'H' : '') +
+        (m ? m + 'M' : '') +
+        (s ? s + 'S' : '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3925,14 +3918,14 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">add = function (val, period) {
     var dur, tmp;
     //invert the arguments, but complain about it
-    if (period !== null &#x26;&#x26; !isNaN(+period)) {
-        deprecateSimple(name, &#x27;moment().&#x27; + name  + &#x27;(period, number) is deprecated. Please use moment().&#x27; + name + &#x27;(number, period
-). &#x27; +
-        &#x27;See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.&#x27;);
+    if (period !== null &amp;&amp; !isNaN(+period)) {
+        deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period
+). ' +
+        'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
         tmp = val; val = period; period = tmp;
     }
 
-    val = typeof val === &#x27;string&#x27; ? +val : val;
+    val = typeof val === 'string' ? +val : val;
     dur = createDuration(val, period);
     addSubtract(this, dur, direction);
     return this;
@@ -3951,12 +3944,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function calendar$1(time, formats) {
     // We want to compare the start of today, vs this.
-    // Getting start-of-today depends on whether we&#x27;re local/utc/offset or not.
+    // Getting start-of-today depends on whether we're local/utc/offset or not.
     var now = time || createLocal(),
-        sod = cloneWithOffset(now, this).startOf(&#x27;day&#x27;),
-        format = hooks.calendarFormat(this, sod) || &#x27;sameElse&#x27;;
+        sod = cloneWithOffset(now, this).startOf('day'),
+        format = hooks.calendarFormat(this, sod) || 'sameElse';
 
-    var output = formats &#x26;&#x26; (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
+    var output = formats &amp;&amp; (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
 
     return this.format(output || this.localeData().calendar(format, this, createLocal(now)));
 }</pre></li>
@@ -4036,12 +4029,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -4049,7 +4042,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -4073,7 +4066,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
     if (input != null) {
         input = parseWeekday(input, this.localeData());
-        return this.add(input - day, &#x27;d&#x27;);
+        return this.add(input - day, 'd');
     } else {
         return day;
     }
@@ -4091,8 +4084,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getSetDayOfYear(input) {
-    var dayOfYear = Math.round((this.clone().startOf(&#x27;day&#x27;) - this.clone().startOf(&#x27;year&#x27;)) / 864e5) + 1;
-    return input == null ? dayOfYear : this.add((input - dayOfYear), &#x27;d&#x27;);
+    var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
+    return input == null ? dayOfYear : this.add((input - dayOfYear), 'd');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4113,7 +4106,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
     if (input != null) {
         input = parseWeekday(input, this.localeData());
-        return this.add(input - day, &#x27;d&#x27;);
+        return this.add(input - day, 'd');
     } else {
         return day;
     }
@@ -4164,20 +4157,20 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
     units = normalizeUnits(units);
 
-    if (units === &#x27;year&#x27; || units === &#x27;month&#x27; || units === &#x27;quarter&#x27;) {
+    if (units === 'year' || units === 'month' || units === 'quarter') {
         output = monthDiff(this, that);
-        if (units === &#x27;quarter&#x27;) {
+        if (units === 'quarter') {
             output = output / 3;
-        } else if (units === &#x27;year&#x27;) {
+        } else if (units === 'year') {
             output = output / 12;
         }
     } else {
         delta = this - that;
-        output = units === &#x27;second&#x27; ? delta / 1e3 : // 1000
-            units === &#x27;minute&#x27; ? delta / 6e4 : // 1000 * 60
-            units === &#x27;hour&#x27; ? delta / 36e5 : // 1000 * 60 * 60
-            units === &#x27;day&#x27; ? (delta - zoneDelta) / 864e5 : // 1000 * 60 * 60 * 24, negate dst
-            units === &#x27;week&#x27; ? (delta - zoneDelta) / 6048e5 : // 1000 * 60 * 60 * 24 * 7, negate dst
+        output = units === 'second' ? delta / 1e3 : // 1000
+            units === 'minute' ? delta / 6e4 : // 1000 * 60
+            units === 'hour' ? delta / 36e5 : // 1000 * 60 * 60
+            units === 'day' ? (delta - zoneDelta) / 864e5 : // 1000 * 60 * 60 * 24, negate dst
+            units === 'week' ? (delta - zoneDelta) / 6048e5 : // 1000 * 60 * 60 * 24 * 7, negate dst
             delta;
     }
     return asFloat ? output : absFloor(output);
@@ -4196,16 +4189,16 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function endOf(units) {
     units = normalizeUnits(units);
-    if (units === undefined || units === &#x27;millisecond&#x27;) {
+    if (units === undefined || units === 'millisecond') {
         return this;
     }
 
-    // &#x27;date&#x27; is an alias for &#x27;day&#x27;, so it should be considered as such.
-    if (units === &#x27;date&#x27;) {
-        units = &#x27;day&#x27;;
+    // 'date' is an alias for 'day', so it should be considered as such.
+    if (units === 'date') {
+        units = 'day';
     }
 
-    return this.startOf(units).add(1, (units === &#x27;isoWeek&#x27; ? &#x27;week&#x27; : units)).subtract(1, &#x27;ms&#x27;);
+    return this.startOf(units).add(1, (units === 'isoWeek' ? 'week' : units)).subtract(1, 'ms');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4234,15 +4227,15 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
 ```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.tz(&#x27;America/Los_Angeles&#x27;).<span class="apidocCodeKeywordSpan">format</span>(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+var june = moment("2014-06-01T12:00:00Z");
+june.tz('America/Los_Angeles').<span class="apidocCodeKeywordSpan">format</span>('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
 ...</pre></li>
     </ul>
 
@@ -4256,8 +4249,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function from(time, withoutSuffix) {
-    if (this.isValid() &#x26;&#x26;
-            ((isMoment(time) &#x26;&#x26; time.isValid()) ||
+    if (this.isValid() &amp;&amp;
+            ((isMoment(time) &amp;&amp; time.isValid()) ||
              createLocal(time).isValid())) {
         return createDuration({to: this, from: time}).locale(this.locale()).humanize(!withoutSuffix);
     } else {
@@ -4374,18 +4367,18 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function inspect() {
     if (!this.isValid()) {
-        return &#x27;moment.invalid(/* &#x27; + this._i + &#x27; */)&#x27;;
+        return 'moment.invalid(/* ' + this._i + ' */)';
     }
-    var func = &#x27;moment&#x27;;
-    var zone = &#x27;&#x27;;
+    var func = 'moment';
+    var zone = '';
     if (!this.isLocal()) {
-        func = this.utcOffset() === 0 ? &#x27;moment.utc&#x27; : &#x27;moment.parseZone&#x27;;
-        zone = &#x27;Z&#x27;;
+        func = this.utcOffset() === 0 ? 'moment.utc' : 'moment.parseZone';
+        zone = 'Z';
     }
-    var prefix = &#x27;[&#x27; + func + &#x27;(&#x22;]&#x27;;
-    var year = (0 &#x3c;= this.year() &#x26;&#x26; this.year() &#x3c;= 9999) ? &#x27;YYYY&#x27; : &#x27;YYYYYY&#x27;;
-    var datetime = &#x27;-MM-DD[T]HH:mm:ss.SSS&#x27;;
-    var suffix = zone + &#x27;[&#x22;)]&#x27;;
+    var prefix = '[' + func + '("]';
+    var year = (0 &lt;= this.year() &amp;&amp; this.year() &lt;= 9999) ? 'YYYY' : 'YYYYYY';
+    var datetime = '-MM-DD[T]HH:mm:ss.SSS';
+    var suffix = zone + '[")]';
 
     return this.format(prefix + year + datetime + suffix);
 }</pre></li>
@@ -4418,14 +4411,14 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isAfter(input, units) {
     var localInput = isMoment(input) ? input : createLocal(input);
-    if (!(this.isValid() &#x26;&#x26; localInput.isValid())) {
+    if (!(this.isValid() &amp;&amp; localInput.isValid())) {
         return false;
     }
-    units = normalizeUnits(!isUndefined(units) ? units : &#x27;millisecond&#x27;);
-    if (units === &#x27;millisecond&#x27;) {
-        return this.valueOf() &#x3e; localInput.valueOf();
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() &gt; localInput.valueOf();
     } else {
-        return localInput.valueOf() &#x3c; this.clone().startOf(units).valueOf();
+        return localInput.valueOf() &lt; this.clone().startOf(units).valueOf();
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -4442,14 +4435,14 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isBefore(input, units) {
     var localInput = isMoment(input) ? input : createLocal(input);
-    if (!(this.isValid() &#x26;&#x26; localInput.isValid())) {
+    if (!(this.isValid() &amp;&amp; localInput.isValid())) {
         return false;
     }
-    units = normalizeUnits(!isUndefined(units) ? units : &#x27;millisecond&#x27;);
-    if (units === &#x27;millisecond&#x27;) {
-        return this.valueOf() &#x3c; localInput.valueOf();
+    units = normalizeUnits(!isUndefined(units) ? units : 'millisecond');
+    if (units === 'millisecond') {
+        return this.valueOf() &lt; localInput.valueOf();
     } else {
-        return this.clone().endOf(units).valueOf() &#x3c; localInput.valueOf();
+        return this.clone().endOf(units).valueOf() &lt; localInput.valueOf();
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -4465,9 +4458,9 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isBetween(from, to, units, inclusivity) {
-    inclusivity = inclusivity || &#x27;()&#x27;;
-    return (inclusivity[0] === &#x27;(&#x27; ? this.isAfter(from, units) : !this.isBefore(from, units)) &#x26;&#x26;
-        (inclusivity[1] === &#x27;)&#x27; ? this.isBefore(to, units) : !this.isAfter(to, units));
+    inclusivity = inclusivity || '()';
+    return (inclusivity[0] === '(' ? this.isAfter(from, units) : !this.isBefore(from, units)) &amp;&amp;
+        (inclusivity[1] === ')' ? this.isBefore(to, units) : !this.isAfter(to, units));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4483,8 +4476,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isDaylightSavingTime() {
     return (
-        this.utcOffset() &#x3e; this.clone().month(0).utcOffset() ||
-        this.utcOffset() &#x3e; this.clone().month(5).utcOffset()
+        this.utcOffset() &gt; this.clone().month(0).utcOffset() ||
+        this.utcOffset() &gt; this.clone().month(5).utcOffset()
     );
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -4506,12 +4499,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -4519,7 +4512,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -4569,15 +4562,15 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function isSame(input, units) {
     var localInput = isMoment(input) ? input : createLocal(input),
         inputMs;
-    if (!(this.isValid() &#x26;&#x26; localInput.isValid())) {
+    if (!(this.isValid() &amp;&amp; localInput.isValid())) {
         return false;
     }
-    units = normalizeUnits(units || &#x27;millisecond&#x27;);
-    if (units === &#x27;millisecond&#x27;) {
+    units = normalizeUnits(units || 'millisecond');
+    if (units === 'millisecond') {
         return this.valueOf() === localInput.valueOf();
     } else {
         inputMs = localInput.valueOf();
-        return this.clone().startOf(units).valueOf() &#x3c;= inputMs &#x26;&#x26; inputMs &#x3c;= this.clone().endOf(units).valueOf();
+        return this.clone().startOf(units).valueOf() &lt;= inputMs &amp;&amp; inputMs &lt;= this.clone().endOf(units).valueOf();
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -4623,7 +4616,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isUtc() {
-    return this.isValid() ? this._isUTC &#x26;&#x26; this._offset === 0 : false;
+    return this.isValid() ? this._isUTC &amp;&amp; this._offset === 0 : false;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4638,7 +4631,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isUtc() {
-    return this.isValid() ? this._isUTC &#x26;&#x26; this._offset === 0 : false;
+    return this.isValid() ? this._isUTC &amp;&amp; this._offset === 0 : false;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4684,7 +4677,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getSetISOWeek(input) {
     var week = weekOfYear(this, 1, 4).week;
-    return input == null ? week : this.add((input - week) * 7, &#x27;d&#x27;);
+    return input == null ? week : this.add((input - week) * 7, 'd');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4744,7 +4737,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getSetISOWeek(input) {
     var week = weekOfYear(this, 1, 4).week;
-    return input == null ? week : this.add((input - week) * 7, &#x27;d&#x27;);
+    return input == null ? week : this.add((input - week) * 7, 'd');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4780,12 +4773,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -4793,7 +4786,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -4816,7 +4809,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         this._isUTC = false;
 
         if (keepLocalTime) {
-            this.subtract(getDateOffset(this), &#x27;m&#x27;);
+            this.subtract(getDateOffset(this), 'm');
         }
     }
     return this;
@@ -4880,12 +4873,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -4893,7 +4886,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -4959,12 +4952,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -4972,7 +4965,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -5037,7 +5030,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         hooks.updateOffset(this, true);
         return this;
     } else {
-        return get(this, &#x27;Month&#x27;);
+        return get(this, 'Month');
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5059,12 +5052,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -5072,7 +5065,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -5092,7 +5085,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function setOffsetToParsedOffset() {
     if (this._tzm != null) {
         this.utcOffset(this._tzm, false, true);
-    } else if (typeof this._i === &#x27;string&#x27;) {
+    } else if (typeof this._i === 'string') {
         var tZone = offsetFromString(matchOffset, this._i);
         if (tZone != null) {
             this.utcOffset(tZone);
@@ -5203,10 +5196,10 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function stringSet(units, value) {
-    if (typeof units === &#x27;object&#x27;) {
+    if (typeof units === 'object') {
         units = normalizeObjectUnits(units);
         var prioritized = getPrioritizedUnits(units);
-        for (var i = 0; i &#x3c; prioritized.length; i++) {
+        for (var i = 0; i &lt; prioritized.length; i++) {
             this[prioritized[i].unit](units[prioritized[i].unit]);
         }
     } else {
@@ -5234,39 +5227,39 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     // the following switch intentionally omits break keywords
     // to utilize falling through the cases.
     switch (units) {
-        case &#x27;year&#x27;:
+        case 'year':
             this.month(0);
 <span class="apidocCodeCommentSpan">            /* falls through */
-</span>        case &#x27;quarter&#x27;:
-        case &#x27;month&#x27;:
+</span>        case 'quarter':
+        case 'month':
             this.date(1);
             /* falls through */
-        case &#x27;week&#x27;:
-        case &#x27;isoWeek&#x27;:
-        case &#x27;day&#x27;:
-        case &#x27;date&#x27;:
+        case 'week':
+        case 'isoWeek':
+        case 'day':
+        case 'date':
             this.hours(0);
             /* falls through */
-        case &#x27;hour&#x27;:
+        case 'hour':
             this.minutes(0);
             /* falls through */
-        case &#x27;minute&#x27;:
+        case 'minute':
             this.seconds(0);
             /* falls through */
-        case &#x27;second&#x27;:
+        case 'second':
             this.milliseconds(0);
     }
 
     // weeks are a special case
-    if (units === &#x27;week&#x27;) {
+    if (units === 'week') {
         this.weekday(0);
     }
-    if (units === &#x27;isoWeek&#x27;) {
+    if (units === 'isoWeek') {
         this.isoWeekday(1);
     }
 
     // quarters are also special
-    if (units === &#x27;quarter&#x27;) {
+    if (units === 'quarter') {
         this.month(Math.floor(this.month() / 3) * 3);
     }
 
@@ -5287,14 +5280,14 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">subtract = function (val, period) {
     var dur, tmp;
     //invert the arguments, but complain about it
-    if (period !== null &#x26;&#x26; !isNaN(+period)) {
-        deprecateSimple(name, &#x27;moment().&#x27; + name  + &#x27;(period, number) is deprecated. Please use moment().&#x27; + name + &#x27;(number, period
-). &#x27; +
-        &#x27;See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.&#x27;);
+    if (period !== null &amp;&amp; !isNaN(+period)) {
+        deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period
+). ' +
+        'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
         tmp = val; val = period; period = tmp;
     }
 
-    val = typeof val === &#x27;string&#x27; ? +val : val;
+    val = typeof val === 'string' ? +val : val;
     dur = createDuration(val, period);
     addSubtract(this, dur, direction);
     return this;
@@ -5312,8 +5305,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function to(time, withoutSuffix) {
-    if (this.isValid() &#x26;&#x26;
-            ((isMoment(time) &#x26;&#x26; time.isValid()) ||
+    if (this.isValid() &amp;&amp;
+            ((isMoment(time) &amp;&amp; time.isValid()) ||
              createLocal(time).isValid())) {
         return createDuration({from: this, to: time}).locale(this.locale()).humanize(!withoutSuffix);
     } else {
@@ -5368,14 +5361,14 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         return null;
     }
     var m = this.clone().utc();
-    if (m.year() &#x3c; 0 || m.year() &#x3e; 9999) {
-        return formatMoment(m, &#x27;YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]&#x27;);
+    if (m.year() &lt; 0 || m.year() &gt; 9999) {
+        return formatMoment(m, 'YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
     }
     if (isFunction(Date.prototype.toISOString)) {
         // native implementation is ~50x faster, use it when we can
         return this.toDate().toISOString();
     }
-    return formatMoment(m, &#x27;YYYY-MM-DD[T]HH:mm:ss.SSS[Z]&#x27;);
+    return formatMoment(m, 'YYYY-MM-DD[T]HH:mm:ss.SSS[Z]');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5445,7 +5438,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toString() {
-    return this.clone().locale(&#x27;en&#x27;).format(&#x27;ddd MMM DD YYYY HH:mm:ss [GMT]ZZ&#x27;);
+    return this.clone().locale('en').format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5465,7 +5458,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			if (this._z) {
 				moment.updateOffset(this);
 			} else {
-				logError(&#x22;Moment Timezone has no data for &#x22; + name + &#x22;. See http://momentjs.com/timezone/docs/#/data-loading/.&#x22;);
+				logError("Moment Timezone has no data for " + name + ". See http://momentjs.com/timezone/docs/#/data-loading/.");
 			}
 			return this;
 		}
@@ -5479,15 +5472,15 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
 ```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+var june = moment("2014-06-01T12:00:00Z");
+june.<span class="apidocCodeKeywordSpan">tz</span>('America/Los_Angeles').format('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
 ...</pre></li>
     </ul>
 
@@ -5538,25 +5531,25 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         return input != null ? this : NaN;
     }
     if (input != null) {
-        if (typeof input === &#x27;string&#x27;) {
+        if (typeof input === 'string') {
             input = offsetFromString(matchShortOffset, input);
             if (input === null) {
                 return this;
             }
-        } else if (Math.abs(input) &#x3c; 16 &#x26;&#x26; !keepMinutes) {
+        } else if (Math.abs(input) &lt; 16 &amp;&amp; !keepMinutes) {
             input = input * 60;
         }
-        if (!this._isUTC &#x26;&#x26; keepLocalTime) {
+        if (!this._isUTC &amp;&amp; keepLocalTime) {
             localAdjust = getDateOffset(this);
         }
         this._offset = input;
         this._isUTC = true;
         if (localAdjust != null) {
-            this.add(localAdjust, &#x27;m&#x27;);
+            this.add(localAdjust, 'm');
         }
         if (offset !== input) {
             if (!keepLocalTime || this._changeInProgress) {
-                addSubtract(this, createDuration(input - offset, &#x27;m&#x27;), 1, false);
+                addSubtract(this, createDuration(input - offset, 'm'), 1, false);
             } else if (!this._changeInProgress) {
                 this._changeInProgress = true;
                 hooks.updateOffset(this, true);
@@ -5597,7 +5590,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getSetWeek(input) {
     var week = this.localeData().week(this);
-    return input == null ? week : this.add((input - week) * 7, &#x27;d&#x27;);
+    return input == null ? week : this.add((input - week) * 7, 'd');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5636,7 +5629,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         return input != null ? this : NaN;
     }
     var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
-    return input == null ? weekday : this.add(input - weekday, &#x27;d&#x27;);
+    return input == null ? weekday : this.add(input - weekday, 'd');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5652,7 +5645,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getSetWeek(input) {
     var week = this.localeData().week(this);
-    return input == null ? week : this.add((input - week) * 7, &#x27;d&#x27;);
+    return input == null ? week : this.add((input - week) * 7, 'd');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5710,12 +5703,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -5723,7 +5716,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -5747,12 +5740,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -5760,7 +5753,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -5858,13 +5851,13 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function getCalendarFormat(myMoment, now) {
-    var diff = myMoment.diff(now, &#x27;days&#x27;, true);
-    return diff &#x3c; -6 ? &#x27;sameElse&#x27; :
-            diff &#x3c; -1 ? &#x27;lastWeek&#x27; :
-            diff &#x3c; 0 ? &#x27;lastDay&#x27; :
-            diff &#x3c; 1 ? &#x27;sameDay&#x27; :
-            diff &#x3c; 2 ? &#x27;nextDay&#x27; :
-            diff &#x3c; 7 ? &#x27;nextWeek&#x27; : &#x27;sameElse&#x27;;
+    var diff = myMoment.diff(now, 'days', true);
+    return diff &lt; -6 ? 'sameElse' :
+            diff &lt; -1 ? 'lastWeek' :
+            diff &lt; 0 ? 'lastDay' :
+            diff &lt; 1 ? 'sameDay' :
+            diff &lt; 2 ? 'nextDay' :
+            diff &lt; 7 ? 'nextWeek' : 'sameElse';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5885,12 +5878,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -5898,7 +5891,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -5920,11 +5913,11 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         var parentConfig = baseConfig;
         config.abbr = name;
         if (locales[name] != null) {
-            deprecateSimple(&#x27;defineLocaleOverride&#x27;,
-                    &#x27;use moment.updateLocale(localeName, config) to change &#x27; +
-                    &#x27;an existing locale. moment.defineLocale(localeName, &#x27; +
-                    &#x27;config) should only be used for creating a new locale &#x27; +
-                    &#x27;See http://momentjs.com/guides/#/warnings/define-locale/ for more info.&#x27;);
+            deprecateSimple('defineLocaleOverride',
+                    'use moment.updateLocale(localeName, config) to change ' +
+                    'an existing locale. moment.defineLocale(localeName, ' +
+                    'config) should only be used for creating a new locale ' +
+                    'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
             parentConfig = locales[name]._config;
         } else if (config.parentLocale != null) {
             if (locales[config.parentLocale] != null) {
@@ -5950,7 +5943,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
         // backwards compat for now: also set the locale
         // make sure we set the locale AFTER all child locales have been
-        // created, so we won&#x27;t end up with the child locale set.
+        // created, so we won't end up with the child locale set.
         getSetGlobalLocale(name);
 
 
@@ -5995,7 +5988,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             duration.milliseconds = input;
         }
     } else if (!!(match = aspNetRegex.exec(input))) {
-        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        sign = (match[1] === '-') ? -1 : 1;
         duration = {
             y  : 0,
             d  : toInt(match[DATE])                         * sign,
@@ -6005,7 +5998,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             ms : toInt(absRound(match[MILLISECOND] * 1000)) * sign // the millisecond decimal point is included in the match
         };
     } else if (!!(match = isoRegex.exec(input))) {
-        sign = (match[1] === &#x27;-&#x27;) ? -1 : 1;
+        sign = (match[1] === '-') ? -1 : 1;
         duration = {
             y : parseIso(match[2], sign),
             M : parseIso(match[3], sign),
@@ -6017,7 +6010,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         };
     } else if (duration == null) {// checks for null or undefined
         duration = {};
-    } else if (typeof duration === &#x27;object&#x27; &#x26;&#x26; (&#x27;from&#x27; in duration || &#x27;to&#x27; in duration)) {
+    } else if (typeof duration === 'object' &amp;&amp; ('from' in duration || 'to' in duration)) {
         diffRes = momentsDifference(createLocal(duration.from), createLocal(duration.to));
 
         duration = {};
@@ -6027,7 +6020,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
     ret = new Duration(duration);
 
-    if (isDuration(input) &#x26;&#x26; hasOwnProp(input, &#x27;_locale&#x27;)) {
+    if (isDuration(input) &amp;&amp; hasOwnProp(input, '_locale')) {
         ret._locale = input._locale;
     }
 
@@ -6069,7 +6062,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isDate(input) {
-    return input instanceof Date || Object.prototype.toString.call(input) === &#x27;[object Date]&#x27;;
+    return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6099,7 +6092,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function isMoment(obj) {
-    return obj instanceof Moment || (obj != null &#x26;&#x26; obj._isAMomentObject != null);
+    return obj instanceof Moment || (obj != null &amp;&amp; obj._isAMomentObject != null);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6120,12 +6113,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -6133,7 +6126,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -6157,12 +6150,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (firstTime) {
         var args = [];
         var arg;
-        for (var i = 0; i &#x3c; arguments.length; i++) {
-            arg = &#x27;&#x27;;
-            if (typeof arguments[i] === &#x27;object&#x27;) {
-                arg += &#x27;\n[&#x27; + i + &#x27;] &#x27;;
+        for (var i = 0; i &lt; arguments.length; i++) {
+            arg = '';
+            if (typeof arguments[i] === 'object') {
+                arg += '\n[' + i + '] ';
                 for (var key in arguments[0]) {
-                    arg += key + &#x27;: &#x27; + arguments[0][key] + &#x27;, &#x27;;
+                    arg += key + ': ' + arguments[0][key] + ', ';
                 }
                 arg = arg.slice(0, -2); // Remove trailing comma and space
             } else {
@@ -6170,7 +6163,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
             }
             args.push(arg);
         }
-        warn(msg + &#x27;\nArguments: &#x27; + Array.prototype.slice.call(args).join(&#x27;&#x27;) + &#x27;\n&#x27; + (new Error()).stack);
+        warn(msg + '\nArguments: ' + Array.prototype.slice.call(args).join('') + '\n' + (new Error()).stack);
         firstTime = false;
     }
     return fn.apply(this, arguments);
@@ -6220,7 +6213,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function getLocale(key) {
     var locale;
 
-    if (key &#x26;&#x26; key._locale &#x26;&#x26; key._locale._abbr) {
+    if (key &amp;&amp; key._locale &amp;&amp; key._locale._abbr) {
         key = key._locale._abbr;
     }
 
@@ -6269,7 +6262,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function max() {
     var args = [].slice.call(arguments, 0);
 
-    return pickBy(&#x27;isAfter&#x27;, args);
+    return pickBy('isAfter', args);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6286,7 +6279,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function min() {
     var args = [].slice.call(arguments, 0);
 
-    return pickBy(&#x27;isBefore&#x27;, args);
+    return pickBy('isBefore', args);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6301,7 +6294,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listMonths(format, index) {
-    return listMonthsImpl(format, index, &#x27;months&#x27;);
+    return listMonthsImpl(format, index, 'months');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6316,7 +6309,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listMonthsShort(format, index) {
-    return listMonthsImpl(format, index, &#x27;monthsShort&#x27;);
+    return listMonthsImpl(format, index, 'monthsShort');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6331,7 +6324,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function normalizeUnits(units) {
-    return typeof units === &#x27;string&#x27; ? aliases[units] || aliases[units.toLowerCase()] : undefined;
+    return typeof units === 'string' ? aliases[units] || aliases[units.toLowerCase()] : undefined;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6361,7 +6354,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">parseTwoDigitYear = function (input) {
-    return toInt(input) + (toInt(input) &#x3e; 68 ? 1900 : 2000);
+    return toInt(input) + (toInt(input) &gt; 68 ? 1900 : 2000);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6394,7 +6387,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     if (roundingFunction === undefined) {
         return round;
     }
-    if (typeof(roundingFunction) === &#x27;function&#x27;) {
+    if (typeof(roundingFunction) === 'function') {
         round = roundingFunction;
         return true;
     }
@@ -6420,7 +6413,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         return thresholds[threshold];
     }
     thresholds[threshold] = limit;
-    if (threshold === &#x27;s&#x27;) {
+    if (threshold === 's') {
         thresholds.ss = limit - 1;
     }
     return true;
@@ -6443,8 +6436,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			zone = getZone(name),
 			out  = moment.utc.apply(null, args);
 
-		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
-			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		if (zone &amp;&amp; !moment.isMoment(input) &amp;&amp; needsOffset(out)) {
+			out.add(zone.parse(out), 'minutes');
 		}
 
 		out.tz(name);
@@ -6459,15 +6452,15 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
 ```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+var june = moment("2014-06-01T12:00:00Z");
+june.<span class="apidocCodeKeywordSpan">tz</span>('America/Los_Angeles').format('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
 ...</pre></li>
     </ul>
 
@@ -6538,15 +6531,15 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			offset;
 
 		if (mom._z === undefined) {
-			if (zone &#x26;&#x26; needsOffset(mom) &#x26;&#x26; !mom._isUTC) {
+			if (zone &amp;&amp; needsOffset(mom) &amp;&amp; !mom._isUTC) {
 				mom._d = moment.utc(mom._a)._d;
-				mom.utc().add(zone.parse(mom), &#x27;minutes&#x27;);
+				mom.utc().add(zone.parse(mom), 'minutes');
 			}
 			mom._z = zone;
 		}
 		if (mom._z) {
 			offset = mom._z.offset(mom);
-			if (Math.abs(offset) &#x3c; 16) {
+			if (Math.abs(offset) &lt; 16) {
 				offset = offset / 60;
 			}
 			if (mom.utcOffset !== undefined) {
@@ -6584,7 +6577,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listWeekdays(localeSorted, format, index) {
-    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdays&#x27;);
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdays');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6599,7 +6592,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listWeekdaysMin(localeSorted, format, index) {
-    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdaysMin&#x27;);
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysMin');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6614,7 +6607,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function listWeekdaysShort(localeSorted, format, index) {
-    return listWeekdaysImpl(localeSorted, format, index, &#x27;weekdaysShort&#x27;);
+    return listWeekdaysImpl(localeSorted, format, index, 'weekdaysShort');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6657,8 +6650,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			zone = getZone(name),
 			out  = moment.utc.apply(null, args);
 
-		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
-			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		if (zone &amp;&amp; !moment.isMoment(input) &amp;&amp; needsOffset(out)) {
+			out.add(zone.parse(out), 'minutes');
 		}
 
 		out.tz(name);
@@ -6673,15 +6666,15 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 IANA Time Zone Database + [Moment.js](http://momentjs.com).
 
 ```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+var june = moment("2014-06-01T12:00:00Z");
+june.<span class="apidocCodeKeywordSpan">tz</span>('America/Los_Angeles').format('ha z'); // 5am PDT
+june.tz('America/New_York').format('ha z');    // 8am EDT
+june.tz('Asia/Tokyo').format('ha z');          // 9pm JST
+june.tz('Australia/Sydney').format('ha z');    // 10pm EST
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+var dec = moment("2014-12-01T12:00:00Z");
+dec.tz('America/Los_Angeles').format('ha z');  // 4am PST
+dec.tz('America/New_York').format('ha z');     // 7am EST
 ...</pre></li>
     </ul>
 
@@ -6714,18 +6707,18 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function addZone(packed) {
 		var i, name, split, normalized;
 
-		if (typeof packed === &#x22;string&#x22;) {
+		if (typeof packed === "string") {
 			packed = [packed];
 		}
 
-		for (i = 0; i &#x3c; packed.length; i++) {
-			split = packed[i].split(&#x27;|&#x27;);
+		for (i = 0; i &lt; packed.length; i++) {
+			split = packed[i].split('|');
 			name = split[0];
 			normalized = normalizeName(name);
 			zones[normalized] = packed[i];
 			names[normalized] = name;
 			if (split[5]) {
-				addToGuesses(normalized, split[2].split(&#x27; &#x27;));
+				addToGuesses(normalized, split[2].split(' '));
 			}
 		}
 	}</pre></li>
@@ -6775,7 +6768,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			outputZones = [],
 			output;
 
-		for (i = 0; i &#x3c; inputZones.length; i++) {
+		for (i = 0; i &lt; inputZones.length; i++) {
 			outputZones[i] = filterYears(inputZones[i], start, end);
 		}
 
@@ -6785,7 +6778,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			version : input.version
 		});
 
-		for (i = 0; i &#x3c; output.zones.length; i++) {
+		for (i = 0; i &lt; output.zones.length; i++) {
 			output.zones[i] = pack(output.zones[i]);
 		}
 
@@ -6851,12 +6844,12 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function addLink(aliases) {
 		var i, alias, normal0, normal1;
 
-		if (typeof aliases === &#x22;string&#x22;) {
+		if (typeof aliases === "string") {
 			aliases = [aliases];
 		}
 
-		for (i = 0; i &#x3c; aliases.length; i++) {
-			alias = aliases[i].split(&#x27;|&#x27;);
+		for (i = 0; i &lt; aliases.length; i++) {
+			alias = aliases[i].split('|');
 
 			normal0 = normalizeName(alias[0]);
 			normal1 = normalizeName(alias[1]);
@@ -6901,7 +6894,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		var i, out = [];
 
 		for (i in names) {
-			if (names.hasOwnProperty(i) &#x26;&#x26; (zones[i] || zones[links[i]]) &#x26;&#x26; names[i]) {
+			if (names.hasOwnProperty(i) &amp;&amp; (zones[i] || zones[links[i]]) &amp;&amp; names[i]) {
 				out.push(names[i]);
 			}
 		}
@@ -6921,7 +6914,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function needsOffset(m) {
-		return !!(m._a &#x26;&#x26; (m._tzm === undefined));
+		return !!(m._a &amp;&amp; (m._tzm === undefined));
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6941,7 +6934,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			source.name,
 			packAbbrsAndOffsets(source),
 			packUntils(source.untils) + packPopulation(source.population)
-		].join(&#x27;|&#x27;);
+		].join('|');
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6956,29 +6949,29 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function packBase60(number, precision) {
-		var output = &#x27;&#x27;,
+		var output = '',
 			absolute = Math.abs(number),
 			whole = Math.floor(absolute),
 			fraction = packBase60Fraction(absolute - whole, Math.min(~~precision, 10));
 
-		while (whole &#x3e; 0) {
+		while (whole &gt; 0) {
 			output = BASE60[whole % 60] + output;
 			whole = Math.floor(whole / 60);
 		}
 
-		if (number &#x3c; 0) {
-			output = &#x27;-&#x27; + output;
+		if (number &lt; 0) {
+			output = '-' + output;
 		}
 
-		if (output &#x26;&#x26; fraction) {
+		if (output &amp;&amp; fraction) {
 			return output + fraction;
 		}
 
-		if (!fraction &#x26;&#x26; output === &#x27;-&#x27;) {
-			return &#x27;0&#x27;;
+		if (!fraction &amp;&amp; output === '-') {
+			return '0';
 		}
 
-		return output || fraction || &#x27;0&#x27;;
+		return output || fraction || '0';
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6993,8 +6986,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setDefault = function (name) {
-		if (major &#x3c; 2 || (major === 2 &#x26;&#x26; minor &#x3c; 9)) {
-			logError(&#x27;Moment Timezone setDefault() requires Moment.js &#x3e;= 2.9.0. You are using Moment.js &#x27; + moment.version + &#x27;.&#x27;);
+		if (major &lt; 2 || (major === 2 &amp;&amp; minor &lt; 9)) {
+			logError('Moment Timezone setDefault() requires Moment.js &gt;= 2.9.0. You are using Moment.js ' + moment.version + '.');
 		}
 		moment.defaultZone = name ? getZone(name) : null;
 		return moment;
@@ -7012,10 +7005,10 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function unpack(string) {
-		var data = string.split(&#x27;|&#x27;),
-			offsets = data[2].split(&#x27; &#x27;),
-			indices = data[3].split(&#x27;&#x27;),
-			untils  = data[4].split(&#x27; &#x27;);
+		var data = string.split('|'),
+			offsets = data[2].split(' '),
+			indices = data[3].split(''),
+			untils  = data[4].split(' ');
 
 		arrayToInt(offsets);
 		arrayToInt(indices);
@@ -7025,7 +7018,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
 		return {
 			name       : data[0],
-			abbrs      : mapIndices(data[1].split(&#x27; &#x27;), indices),
+			abbrs      : mapIndices(data[1].split(' '), indices),
 			offsets    : mapIndices(offsets, indices),
 			untils     : untils,
 			population : data[5] | 0
@@ -7045,9 +7038,9 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function unpackBase60(string) {
 		var i = 0,
-			parts = string.split(&#x27;.&#x27;),
+			parts = string.split('.'),
 			whole = parts[0],
-			fractional = parts[1] || &#x27;&#x27;,
+			fractional = parts[1] || '',
 			multiplier = 1,
 			num,
 			out = 0,
@@ -7060,13 +7053,13 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		}
 
 		// handle digits before the decimal
-		for (i; i &#x3c; whole.length; i++) {
+		for (i; i &lt; whole.length; i++) {
 			num = charCodeToInt(whole.charCodeAt(i));
 			out = 60 * out + num;
 		}
 
 		// handle digits after the decimal
-		for (i = 0; i &#x3c; fractional.length; i++) {
+		for (i = 0; i &lt; fractional.length; i++) {
 			multiplier = multiplier / 60;
 			num = charCodeToInt(fractional.charCodeAt(i));
 			out += num * multiplier;
@@ -7096,14 +7089,14 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			return zone;
 		}
 
-		if (typeof zone === &#x27;string&#x27;) {
+		if (typeof zone === 'string') {
 			zone = new Zone(zone);
 			zones[name] = zone;
 			return zone;
 		}
 
 		// Pass getZone to prevent recursion more than 1 level deep
-		if (links[name] &#x26;&#x26; caller !== getZone &#x26;&#x26; (link = getZone(links[name], getZone))) {
+		if (links[name] &amp;&amp; caller !== getZone &amp;&amp; (link = getZone(links[name], getZone))) {
 			zone = zones[name] = new Zone();
 			zone._set(link);
 			zone.name = names[name];
@@ -7127,7 +7120,7 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function zoneExists(name) {
 		if (!zoneExists.didShowError) {
 			zoneExists.didShowError = true;
-				logError(&#x22;moment.tz.zoneExists(&#x27;&#x22; + name + &#x22;&#x27;) has been deprecated in favor of !moment.tz.zone(&#x27;&#x22; + name + &#x22;&#x27;)&#x22;);
+				logError("moment.tz.zoneExists('" + name + "') has been deprecated in favor of !moment.tz.zone('" + name + "')");
 		}
 		return !!getZone(name);
 	}</pre></li>
@@ -7185,8 +7178,8 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 				untils = this.untils,
 				i;
 
-			for (i = 0; i &#x3c; untils.length; i++) {
-				if (target &#x3c; untils[i]) {
+			for (i = 0; i &lt; untils.length; i++) {
+				if (target &lt; untils[i]) {
 					return i;
 				}
 			}
@@ -7259,18 +7252,18 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 				max     = untils.length - 1,
 				offset, offsetNext, offsetPrev, i;
 
-			for (i = 0; i &#x3c; max; i++) {
+			for (i = 0; i &lt; max; i++) {
 				offset     = offsets[i];
 				offsetNext = offsets[i + 1];
 				offsetPrev = offsets[i ? i - 1 : i];
 
-				if (offset &#x3c; offsetNext &#x26;&#x26; tz.moveAmbiguousForward) {
+				if (offset &lt; offsetNext &amp;&amp; tz.moveAmbiguousForward) {
 					offset = offsetNext;
-				} else if (offset &#x3e; offsetPrev &#x26;&#x26; tz.moveInvalidForward) {
+				} else if (offset &gt; offsetPrev &amp;&amp; tz.moveInvalidForward) {
 					offset = offsetPrev;
 				}
 
-				if (target &#x3c; untils[i] - (offset * 60000)) {
+				if (target &lt; untils[i] - (offset * 60000)) {
 					return offsets[i];
 				}
 			}
@@ -7289,3 +7282,4 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     ]
 </div>
 </div>
+</body></html>
