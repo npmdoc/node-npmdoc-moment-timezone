@@ -2455,7 +2455,23 @@
     <li>description and source-code<pre class="apidocCodePre">function isMoment(obj) {
     return obj instanceof Moment || (obj != null &#x26;&#x26; obj._isAMomentObject != null);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	function tz (input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.<span class="apidocCodeKeywordSpan">isMoment</span>(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}
+...</pre></li>
     </ul>
 
 
@@ -2642,7 +2658,23 @@
 
     return pickBy(&#x27;isBefore&#x27;, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return output;
+	}
+
+	function packBase60(number, precision) {
+		var output = &#x27;&#x27;,
+			absolute = Math.abs(number),
+			whole = Math.floor(absolute),
+			fraction = packBase60Fraction(absolute - whole, Math.<span class="apidocCodeKeywordSpan">min</span>(~~precision, 10));
+
+		while (whole &#x3e; 0) {
+			output = BASE60[whole % 60] + output;
+			whole = Math.floor(whole / 60);
+		}
+
+		if (number &#x3c; 0) {
+...</pre></li>
     </ul>
 
 
@@ -2821,22 +2853,21 @@
 		return out;
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
 
-[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
--url] [![Build Status][travis-image]][travis-url]
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
 
-IANA Time Zone Database + [Moment.js](http://momentjs.com).
+		out.<span class="apidocCodeKeywordSpan">tz</span>(name);
 
-```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+		return out;
+	}
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+	tz.version      = VERSION;
+	tz.dataVersion  = &#x27;&#x27;;
+	tz._zones       = zones;
 ...</pre></li>
     </ul>
 
@@ -2942,7 +2973,24 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			}
 		}
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+	};
+
+	fn.tz = function (name) {
+		if (name) {
+			this._z = getZone(name);
+			if (this._z) {
+				moment.<span class="apidocCodeKeywordSpan">updateOffset</span>(this);
+			} else {
+				logError(&#x22;Moment Timezone has no data for &#x22; + name + &#x22;. See http://momentjs.com/timezone/docs/#/data-loading/.&#
+x22;);
+			}
+			return this;
+		}
+		if (this._z) { return this._z.name; }
+	};
+...</pre></li>
     </ul>
 
 
@@ -2957,7 +3005,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function createUTC(input, format, locale, strict) {
     return createLocalOrUTC(input, format, locale, strict, true).utc();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	moment.updateOffset = function (mom, keepTime) {
+		var zone = moment.defaultZone,
+			offset;
+
+		if (mom._z === undefined) {
+			if (zone &#x26;&#x26; needsOffset(mom) &#x26;&#x26; !mom._isUTC) {
+				mom._d = moment.<span class="apidocCodeKeywordSpan">utc</span>(mom._a)._d;
+				mom.utc().add(zone.parse(mom), &#x27;minutes&#x27;);
+			}
+			mom._z = zone;
+		}
+		if (mom._z) {
+			offset = mom._z.offset(mom);
+			if (Math.abs(offset) &#x3c; 16) {
+...</pre></li>
     </ul>
 
 
@@ -3205,7 +3269,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
     return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function ZoneScore(zone) {
+		this.zone = zone;
+		this.offsetScore = 0;
+		this.abbrScore = 0;
+	}
+
+	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
+		this.offsetScore += Math.<span class="apidocCodeKeywordSpan">abs</span>(this.zone.offset(offsetAt.at) - offsetAt.offset);
+		if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, &#x27;&#x27;) !== offsetAt.abbr) {
+			this.abbrScore++;
+		}
+	};
+
+	function findChange(low, high) {
+		var mid, diff;
+...</pre></li>
     </ul>
 
 
@@ -3220,7 +3300,22 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function add$1(input, value) {
     return addSubtract$1(this, input, value, 1);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function tz (input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.<span class="apidocCodeKeywordSpan">add</span>(zone.parse(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}
+...</pre></li>
     </ul>
 
 
@@ -3937,7 +4032,22 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     addSubtract(this, dur, direction);
     return this;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function tz (input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.<span class="apidocCodeKeywordSpan">add</span>(zone.parse(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}
+...</pre></li>
     </ul>
 
 
@@ -4977,7 +5087,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     }
     return fn.apply(this, arguments);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return output;
+	}
+
+	function packBase60(number, precision) {
+		var output = &#x27;&#x27;,
+			absolute = Math.abs(number),
+			whole = Math.floor(absolute),
+			fraction = packBase60Fraction(absolute - whole, Math.<span class="apidocCodeKeywordSpan">min</span>(~~precision, 10));
+
+		while (whole &#x3e; 0) {
+			output = BASE60[whole % 60] + output;
+			whole = Math.floor(whole / 60);
+		}
+
+		if (number &#x3c; 0) {
+...</pre></li>
     </ul>
 
 
@@ -5472,22 +5598,21 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		if (this._z) { return this._z.name; }
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
 
-[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
--url] [![Build Status][travis-image]][travis-url]
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
 
-IANA Time Zone Database + [Moment.js](http://momentjs.com).
+		out.<span class="apidocCodeKeywordSpan">tz</span>(name);
 
-```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+		return out;
+	}
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+	tz.version      = VERSION;
+	tz.dataVersion  = &#x27;&#x27;;
+	tz._zones       = zones;
 ...</pre></li>
     </ul>
 
@@ -5519,7 +5644,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			this._z = null;
 			return old.apply(this, arguments);
 		}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	moment.updateOffset = function (mom, keepTime) {
+		var zone = moment.defaultZone,
+			offset;
+
+		if (mom._z === undefined) {
+			if (zone &#x26;&#x26; needsOffset(mom) &#x26;&#x26; !mom._isUTC) {
+				mom._d = moment.<span class="apidocCodeKeywordSpan">utc</span>(mom._a)._d;
+				mom.utc().add(zone.parse(mom), &#x27;minutes&#x27;);
+			}
+			mom._z = zone;
+		}
+		if (mom._z) {
+			offset = mom._z.offset(mom);
+			if (Math.abs(offset) &#x3c; 16) {
+...</pre></li>
     </ul>
 
 
@@ -5568,7 +5709,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
         return this._isUTC ? offset : getDateOffset(this);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+		if (mom._z) {
+			offset = mom._z.offset(mom);
+			if (Math.abs(offset) &#x3c; 16) {
+				offset = offset / 60;
+			}
+			if (mom.utcOffset !== undefined) {
+				mom.<span class="apidocCodeKeywordSpan">utcOffset</span>(-offset, keepTime);
+			} else {
+				mom.zone(offset, keepTime);
+			}
+		}
+	};
+
+	fn.tz = function (name) {
+...</pre></li>
     </ul>
 
 
@@ -5765,7 +5922,24 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     }
     return fn.apply(this, arguments);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		addLink(data.links);
+		tz.dataVersion = data.version;
+	}
+
+	function zoneExists (name) {
+		if (!zoneExists.didShowError) {
+			zoneExists.didShowError = true;
+				logError(&#x22;moment.tz.zoneExists(&#x27;&#x22; + name + &#x22;&#x27;) has been deprecated in favor of !moment.tz.<span class
+="apidocCodeKeywordSpan">zone</span>(&#x27;&#x22; + name + &#x22;&#x27;)&#x22;);
+		}
+		return !!getZone(name);
+	}
+
+	function needsOffset (m) {
+		return !!(m._a &#x26;&#x26; (m._tzm === undefined));
+	}
+...</pre></li>
     </ul>
 
 
@@ -6101,7 +6275,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function isMoment(obj) {
     return obj instanceof Moment || (obj != null &#x26;&#x26; obj._isAMomentObject != null);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	function tz (input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.<span class="apidocCodeKeywordSpan">isMoment</span>(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}
+...</pre></li>
     </ul>
 
 
@@ -6288,7 +6478,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
     return pickBy(&#x27;isBefore&#x27;, args);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		return output;
+	}
+
+	function packBase60(number, precision) {
+		var output = &#x27;&#x27;,
+			absolute = Math.abs(number),
+			whole = Math.floor(absolute),
+			fraction = packBase60Fraction(absolute - whole, Math.<span class="apidocCodeKeywordSpan">min</span>(~~precision, 10));
+
+		while (whole &#x3e; 0) {
+			output = BASE60[whole % 60] + output;
+			whole = Math.floor(whole / 60);
+		}
+
+		if (number &#x3c; 0) {
+...</pre></li>
     </ul>
 
 
@@ -6452,22 +6658,21 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		return out;
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
 
-[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
--url] [![Build Status][travis-image]][travis-url]
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
 
-IANA Time Zone Database + [Moment.js](http://momentjs.com).
+		out.<span class="apidocCodeKeywordSpan">tz</span>(name);
 
-```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+		return out;
+	}
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+	tz.version      = VERSION;
+	tz.dataVersion  = &#x27;&#x27;;
+	tz._zones       = zones;
 ...</pre></li>
     </ul>
 
@@ -6556,7 +6761,24 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			}
 		}
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+	};
+
+	fn.tz = function (name) {
+		if (name) {
+			this._z = getZone(name);
+			if (this._z) {
+				moment.<span class="apidocCodeKeywordSpan">updateOffset</span>(this);
+			} else {
+				logError(&#x22;Moment Timezone has no data for &#x22; + name + &#x22;. See http://momentjs.com/timezone/docs/#/data-loading/.&#
+x22;);
+			}
+			return this;
+		}
+		if (this._z) { return this._z.name; }
+	};
+...</pre></li>
     </ul>
 
 
@@ -6571,7 +6793,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">function createUTC(input, format, locale, strict) {
     return createLocalOrUTC(input, format, locale, strict, true).utc();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	moment.updateOffset = function (mom, keepTime) {
+		var zone = moment.defaultZone,
+			offset;
+
+		if (mom._z === undefined) {
+			if (zone &#x26;&#x26; needsOffset(mom) &#x26;&#x26; !mom._isUTC) {
+				mom._d = moment.<span class="apidocCodeKeywordSpan">utc</span>(mom._a)._d;
+				mom.utc().add(zone.parse(mom), &#x27;minutes&#x27;);
+			}
+			mom._z = zone;
+		}
+		if (mom._z) {
+			offset = mom._z.offset(mom);
+			if (Math.abs(offset) &#x3c; 16) {
+...</pre></li>
     </ul>
 
 
@@ -6666,22 +6904,21 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		return out;
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
 
-[![NPM version][npm-version-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url] [![MIT License][license-image]][license
--url] [![Build Status][travis-image]][travis-url]
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.parse(out), &#x27;minutes&#x27;);
+		}
 
-IANA Time Zone Database + [Moment.js](http://momentjs.com).
+		out.<span class="apidocCodeKeywordSpan">tz</span>(name);
 
-```js
-var june = moment(&#x22;2014-06-01T12:00:00Z&#x22;);
-june.<span class="apidocCodeKeywordSpan">tz</span>(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;); // 5am PDT
-june.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);    // 8am EDT
-june.tz(&#x27;Asia/Tokyo&#x27;).format(&#x27;ha z&#x27;);          // 9pm JST
-june.tz(&#x27;Australia/Sydney&#x27;).format(&#x27;ha z&#x27;);    // 10pm EST
+		return out;
+	}
 
-var dec = moment(&#x22;2014-12-01T12:00:00Z&#x22;);
-dec.tz(&#x27;America/Los_Angeles&#x27;).format(&#x27;ha z&#x27;);  // 4am PST
-dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
+	tz.version      = VERSION;
+	tz.dataVersion  = &#x27;&#x27;;
+	tz._zones       = zones;
 ...</pre></li>
     </ul>
 
@@ -6729,7 +6966,22 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			}
 		}
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function tz (input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.<span class="apidocCodeKeywordSpan">add</span>(zone.parse(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}
+...</pre></li>
     </ul>
 
 
@@ -6836,7 +7088,27 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		}
 		return cachedGuess;
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### `0.5.2` _2016-03-15_
+* Updated data to IANA TZDB `2016b`. [#315](https://github.com/moment/moment-timezone/pull/315)
+
+### `0.5.1` _2016-03-01_
+* Updated data to IANA TZDB `2016a`. [#299](https://github.com/moment/moment-timezone/pull/299)
+* Fixed bug when `Date#toTimeString` did not return a known format. [#302](https://github.com/moment/moment-timezone/pull/302)  [#
+303](https://github.com/moment/moment-timezone/pull/303)
+* Added lookup on `Intl.DateTimeFormat().resolvedOptions().timeZone` to `moment.tz.<span class="apidocCodeKeywordSpan">guess</span
+>()`. [#304](https://github.com/moment/moment-timezone/pull/304) [#291](https://github.com/moment/moment-timezone/pull/291)
+
+### `0.5.0` _2015-12-28_
+* Added support for guessing the user&#x27;s timezone via `moment.tz.guess()`. [#285](https://github.com/moment/moment-timezone/
+pull/285)
+* Fixed UMD export issue when there was an html element with `id=exports`. [#275](https://github.com/moment/moment-timezone/pull
+/275)
+* Removed jspm specific dependencies from `package.json`. [#284](https://github.com/moment/moment-timezone/pull/284)
+
+### `0.4.1` _2015-10-07_
+...</pre></li>
     </ul>
 
 
@@ -7112,7 +7384,24 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
 		return null;
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		addLink(data.links);
+		tz.dataVersion = data.version;
+	}
+
+	function zoneExists (name) {
+		if (!zoneExists.didShowError) {
+			zoneExists.didShowError = true;
+				logError(&#x22;moment.tz.zoneExists(&#x27;&#x22; + name + &#x22;&#x27;) has been deprecated in favor of !moment.tz.<span class
+="apidocCodeKeywordSpan">zone</span>(&#x27;&#x22; + name + &#x22;&#x27;)&#x22;);
+		}
+		return !!getZone(name);
+	}
+
+	function needsOffset (m) {
+		return !!(m._a &#x26;&#x26; (m._tzm === undefined));
+	}
+...</pre></li>
     </ul>
 
 
@@ -7131,7 +7420,24 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 		}
 		return !!getZone(name);
 	}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		addLink(data.links);
+		tz.dataVersion = data.version;
+	}
+
+	function zoneExists (name) {
+		if (!zoneExists.didShowError) {
+			zoneExists.didShowError = true;
+				logError(&#x22;moment.tz.<span class="apidocCodeKeywordSpan">zoneExists</span>(&#x27;&#x22; + name + &#x22;&#x27;) has been
+deprecated in favor of !moment.tz.zone(&#x27;&#x22; + name + &#x22;&#x27;)&#x22;);
+		}
+		return !!getZone(name);
+	}
+
+	function needsOffset (m) {
+		return !!(m._a &#x26;&#x26; (m._tzm === undefined));
+	}
+...</pre></li>
     </ul>
 
 
@@ -7191,7 +7497,22 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 				}
 			}
 		}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+				}
+			}
+
+			return offsets[max];
+		},
+
+		abbr : function (mom) {
+			return this.abbrs[this.<span class="apidocCodeKeywordSpan">_index</span>(mom)];
+		},
+
+		offset : function (mom) {
+			return this.offsets[this._index(mom)];
+		}
+	};
+...</pre></li>
     </ul>
 
 
@@ -7210,7 +7531,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 			this.offsets    = unpacked.offsets;
 			this.population = unpacked.population;
 		}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	/************************************
+		Zone object
+	************************************/
+
+	function Zone (packedString) {
+		if (packedString) {
+			this.<span class="apidocCodeKeywordSpan">_set</span>(unpack(packedString));
+		}
+	}
+
+	Zone.prototype = {
+		_set : function (unpacked) {
+			this.name       = unpacked.name;
+			this.abbrs      = unpacked.abbrs;
+...</pre></li>
     </ul>
 
 
@@ -7225,7 +7562,22 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">abbr = function (mom) {
 			return this.abbrs[this._index(mom)];
 		}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		this.zone = zone;
+		this.offsetScore = 0;
+		this.abbrScore = 0;
+	}
+
+	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
+		this.offsetScore += Math.abs(this.zone.offset(offsetAt.at) - offsetAt.offset);
+		if (this.zone.<span class="apidocCodeKeywordSpan">abbr</span>(offsetAt.at).replace(/[^A-Z]/g, &#x27;&#x27;) !== offsetAt.abbr) {
+			this.abbrScore++;
+		}
+	};
+
+	function findChange(low, high) {
+		var mid, diff;
+...</pre></li>
     </ul>
 
 
@@ -7240,7 +7592,23 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
     <li>description and source-code<pre class="apidocCodePre">offset = function (mom) {
 			return this.offsets[this._index(mom)];
 		}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function ZoneScore(zone) {
+		this.zone = zone;
+		this.offsetScore = 0;
+		this.abbrScore = 0;
+	}
+
+	ZoneScore.prototype.scoreOffsetAt = function (offsetAt) {
+		this.offsetScore += Math.abs(this.zone.<span class="apidocCodeKeywordSpan">offset</span>(offsetAt.at) - offsetAt.offset);
+		if (this.zone.abbr(offsetAt.at).replace(/[^A-Z]/g, &#x27;&#x27;) !== offsetAt.abbr) {
+			this.abbrScore++;
+		}
+	};
+
+	function findChange(low, high) {
+		var mid, diff;
+...</pre></li>
     </ul>
 
 
@@ -7277,7 +7645,22 @@ dec.tz(&#x27;America/New_York&#x27;).format(&#x27;ha z&#x27;);     // 7am EST
 
 			return offsets[max];
 		}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function tz (input) {
+		var args = Array.prototype.slice.call(arguments, 0, -1),
+			name = arguments[arguments.length - 1],
+			zone = getZone(name),
+			out  = moment.utc.apply(null, args);
+
+		if (zone &#x26;&#x26; !moment.isMoment(input) &#x26;&#x26; needsOffset(out)) {
+			out.add(zone.<span class="apidocCodeKeywordSpan">parse</span>(out), &#x27;minutes&#x27;);
+		}
+
+		out.tz(name);
+
+		return out;
+	}
+...</pre></li>
     </ul>
 
 
